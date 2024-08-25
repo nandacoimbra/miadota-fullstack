@@ -3,7 +3,8 @@
 :root{
   --footer-gray: #E5E5E5; 
   --darker-gray: #565264;
-  --banner-green: #92b6b1; 
+  --header-green: #92b6b1; 
+
   --btn-green: #028090;
   --orange-pantone: #F26419; 
   --prussian-blue: #13293D;
@@ -23,4 +24,14 @@
 
 body{
   min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
