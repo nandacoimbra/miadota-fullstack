@@ -19,14 +19,14 @@ export const assets = {
     timtim
 }
 
-export const filter_species_list = [
+export const listaDeEspecies = [
     {
-        species_name: "Gatos",
-        species_image: cat_category
+        especie: "Gatos",
+        imagem: cat_category
     },
     {
-        species_name: "Cachorros",
-        species_image: dog_category
+        especie: "Cachorros",
+        imagem: dog_category
     }
 ]
 

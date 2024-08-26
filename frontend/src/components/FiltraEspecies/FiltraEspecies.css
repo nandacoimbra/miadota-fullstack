@@ -1,31 +1,31 @@
 
-.filter-species-container{
+.filtra-especies-container{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     
 }
 
-.filter-species-container h1{
+.filtra-especies-container h1{
     font-weight: 500;
 }
 
-.filter-species-text {
+.filtra-especies-text {
     max-width: 60%;
 }
 
-.category-item img{
+.lista-especies img{
     width: 100px;
     height: auto;
     border-radius: 50%;
     cursor: pointer;
 }
-.category-item p{
+.especie p{
    color: var(--darker-gray);
    font-size: 1rem;
 }
 
-.categories{
+.lista-especies{
     display: flex;
     justify-content: flex-start;
     align-items: center;
