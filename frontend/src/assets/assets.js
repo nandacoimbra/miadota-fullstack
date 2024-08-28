@@ -20,13 +20,60 @@ export const assets = {
 }
 
 export const listaDeEspecies = [
-    {
+    {   
+        id: 1,
         especie: "Gatos",
         imagem: cat_category
     },
     {
-        especie: "Cachorros",
+        id: 2,
+        especie: "Cães",
         imagem: dog_category
     }
+]
+
+export const petsParaAdocao = [
+    {
+        id: 1,
+        imagem: nick,
+        nome: "Nick Mason",
+        sexo: "macho",
+        cidade: "Cataguases",
+        estado: "MG",
+        descricao: "",
+        status: true
+  
+      },
+      {
+        id: 2,
+        imagem: timtim,
+        nome: "Tim Tim",
+        sexo: "macho",
+        cidade: "Cataguases",
+        estado: "MG",
+        descricao: "",
+        status: true
+      },
+      {
+        id: 3,
+        imagem: pingo,
+        nome: "Pingo",
+        sexo: "macho",
+        cidade: "Leopoldina",
+        estado: "MG",
+        descricao: "",
+        status: true
+      },
+      {
+        id: 4,
+        imagem: luna,
+        nome: "Luna",
+        sexo: "femea",
+        cidade: "Leopoldina",
+        estado: "MG",
+        descricao: "",
+        status: true
+      }
+
 ]
 

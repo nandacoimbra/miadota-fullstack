@@ -33,3 +33,7 @@
     text-align: center;
     margin: 1rem 0rem;
 }
+.lista-especies .active{
+    border: 4px solid var(--btn-green);
+    padding: 2px;
+}

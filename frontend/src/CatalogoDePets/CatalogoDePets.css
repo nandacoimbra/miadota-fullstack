@@ -1,0 +1,6 @@
+
+.pets-para-adocao{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+}
