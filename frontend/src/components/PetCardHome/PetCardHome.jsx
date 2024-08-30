@@ -2,7 +2,7 @@ import React from 'react'
 import './PetCardHome.css'
 import { MapPinLine } from 'phosphor-react'
 
-const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status }) => {
+const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status, especie }) => {
     return (
         <div className='pet-card-body'>
             <div className="pet-card-img-container">

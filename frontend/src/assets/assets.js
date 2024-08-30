@@ -36,6 +36,7 @@ export const petsParaAdocao = [
     {
         id: 1,
         imagem: nick,
+        especie: "Gatos",
         nome: "Nick Mason",
         sexo: "macho",
         cidade: "Cataguases",
@@ -47,6 +48,7 @@ export const petsParaAdocao = [
       {
         id: 2,
         imagem: timtim,
+        especie: "Gatos",
         nome: "Tim Tim",
         sexo: "macho",
         cidade: "Cataguases",
@@ -57,6 +59,7 @@ export const petsParaAdocao = [
       {
         id: 3,
         imagem: pingo,
+        especie: "Gatos",
         nome: "Pingo",
         sexo: "macho",
         cidade: "Leopoldina",
@@ -68,6 +71,7 @@ export const petsParaAdocao = [
         id: 4,
         imagem: luna,
         nome: "Luna",
+        especie: "Gatos",
         sexo: "femea",
         cidade: "Leopoldina",
         estado: "MG",

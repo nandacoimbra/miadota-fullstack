@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './CatalogoDePets.css'
-import { AppContext } from '../context/AppContext'
+import { AppContext } from '../../context/AppContext'
 import PetCardHome from '../PetCardHome/PetCardHome';
 
 const CatalogoDePets = ({ especie }) => {
@@ -12,7 +12,11 @@ const CatalogoDePets = ({ especie }) => {
             <div className="pets-para-adocao">
                 {
                     petsParaAdocao.map((card) => {
-                        return <PetCardHome key={card.id} id={card.id} imagem={card.imagem} nome={card.nome} sexo={card.sexo} cidade={card.cidade} estado={card.estado} descricao={card.descricao} status={card.status} />
+                        if(especie==="todos" || especie===card.especie){
+
+                            return <PetCardHome key={card.id} id={card.id} imagem={card.imagem} nome={card.nome} sexo={card.sexo} cidade={card.cidade} estado={card.estado} descricao={card.descricao} status={card.status} especie={card.especie}/>
+
+                        }
                     })
 
                 }

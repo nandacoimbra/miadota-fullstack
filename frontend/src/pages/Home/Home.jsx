@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Home.css'
 import Header from '../../components/Header/Header'
 import FiltraEspecies from '../../components/FiltraEspecies/FiltraEspecies'
-import CatalogoDePets from '../../CatalogoDePets/CatalogoDePets'
+import CatalogoDePets from '../../components/CatalogoDePets/CatalogoDePets'
 
 const Home = () => {
 

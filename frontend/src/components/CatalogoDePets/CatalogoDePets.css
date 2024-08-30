@@ -1,0 +1,9 @@
+
+.pets-para-adocao{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem 2rem;
+    animation:  fadeIn 1s;
+}

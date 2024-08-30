@@ -10,6 +10,12 @@
     border-radius: 8px;
 }
 
+.pet-card-body:hover{
+    transform: scale(1.05);
+    transition: .1s;
+    cursor: pointer;
+}
+
 .pet-card-img-container {
     border-radius: 8px;
     border: 1px solid gray;
