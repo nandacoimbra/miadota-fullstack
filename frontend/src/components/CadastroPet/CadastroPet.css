@@ -1,0 +1,61 @@
+.add-pet-container {
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    min-height: 35rem;
+    padding: 2rem;
+    background-color: var(--footer-gray);
+    margin-top: 2rem;
+}
+
+.add-pet-title{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.add-pet-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.add-pet-form input, 
+.add-pet-form select,
+.add-pet-form textarea{
+    height: 2rem;
+    border: 1px solid transparent;
+    /* padding: .2rem; */
+    margin-bottom: .5rem;
+}
+
+.add-pet-form textarea{
+    height: auto !important;
+}
+
+.add-pet-name,
+.add-pet-sex,
+.add-pet-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-pet-city-state{
+    display: flex;
+    gap: .5rem;
+}
+
+.pet-city, .pet-state{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-pet-button{
+    width: 100%;
+    background-color: var(--btn-green);
+    color: var(--white);
+    border: 1px solid transparent;
+    height: 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    align-self: center;
+}
