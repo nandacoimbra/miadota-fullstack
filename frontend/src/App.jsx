@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
 import LoginCadastro from './pages/LoginCadastro/LoginCadastro'
 import CadastroPet from './components/CadastroPet/CadastroPet'
+import User from './pages/User/User'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginCadastro />} />
           <Route path='/cadastro-pet' element={<CadastroPet/>} />
+          <Route path='/user' element={<User/>} />
         </Routes>
       </div>
       <Footer />

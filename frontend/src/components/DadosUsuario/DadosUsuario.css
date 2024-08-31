@@ -1,0 +1,43 @@
+.user-data{
+    width: 40rem;
+    height: 30rem;
+    background-color: var(--white);
+    padding: 2rem;
+}
+
+.user-data-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-address,
+.user-city-state{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.user-name, 
+.user-email, 
+.user-phone,
+.user-city,
+.user-state,
+.user-street,
+.user-house-number{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-user-data-button{
+    width: 50%;
+    align-self: center;
+    margin-top: 1rem;
+    background-color: var(--btn-green);
+    color: var(--white);
+    border: 1px solid transparent;
+    height: 2rem;
+    cursor: pointer;
+}
