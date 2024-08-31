@@ -1,0 +1,51 @@
+.user-wanted-pet {
+    display: flex;
+    width: 35rem;
+    height: 15rem;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    background-color: var(--card-white);
+    box-shadow: inset 0 -3em 3em rgba(235, 241, 235, 0.3),
+        0 0 0 2px var(--footer-gray),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+}
+
+.user-pet-img-container img {
+    width: 15rem;
+    height: auto;
+    border-radius: 2rem 0 0 2rem;
+}
+
+.user-pet-data {
+    padding: 1rem;
+    width: 100%;
+}
+
+.user-pet-data h5 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.user-pet-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.user-pet-specie,
+.user-pet-local,
+.user-pet-tutor {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.user-pet-adoption-status{
+    display: flex;
+    flex-direction: column;
+}
+
+.adoption-status{
+    align-self: center;
+    background-color: var(--footer-gray);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
