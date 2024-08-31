@@ -1,0 +1,58 @@
+.my-pet-card {
+    display: flex;
+    width: 35rem;
+    min-height: 17rem;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    background-color: var(--card-white);
+    box-shadow: inset 0 -3em 3em rgba(235, 241, 235, 0.3),
+        0 0 0 2px var(--footer-gray),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+}
+
+.my-pet-img-container img {
+    width: 15rem;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 2rem 0 0 2rem;
+}
+
+.my-pet-data {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-pet-data h5 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.my-pet-label {
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+}
+.my-pet-label span{
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+.my-pet-specie,
+.my-pet-local,
+.my-pet-date {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.my-pet-interested-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-interested-people{
+    align-self: center;
+    background-color: var(--footer-gray);
+    padding: 0.4rem;
+}
