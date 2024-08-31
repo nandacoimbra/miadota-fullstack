@@ -8,11 +8,11 @@
         0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
     background-color: var(--footer-gray);
     border-radius: 8px;
+    transition: .2s ease-in-out;
 }
 
 .pet-card-body:hover{
     transform: scale(1.05);
-    transition: .1s;
     cursor: pointer;
 }
 

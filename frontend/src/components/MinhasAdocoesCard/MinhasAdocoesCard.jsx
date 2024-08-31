@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 
 const MinhasAdocoesCard = () => {
 
-    
+
     return (
         <div className='user-wanted-pet'>
             <div className="user-pet-img-container">
@@ -13,16 +13,16 @@ const MinhasAdocoesCard = () => {
             <div className="user-pet-data">
                 <h5>Nick</h5>
                 <div className="user-pet-specie">
-                    <span className='user-pet-label'>Espécie:</span>
-                    <span>Gato</span>
+                    <span className='user-pet-label'>Espécie: <span>Gato</span></span>
+
                 </div>
                 <div className="user-pet-tutor">
-                    <span className='user-pet-label'>Responsável:</span>
-                    <span>Fernanda Souza Coimbra Machado</span>
+                    <span className='user-pet-label'>Responsável: <span>Fernanda Souza Coimbra Machado</span></span>
+
                 </div>
                 <div className="user-pet-local">
-                    <span className='user-pet-label'>Local:</span>
-                    <span>Cataguases-MG</span>
+                    <span className='user-pet-label'>Local: <span>Cataguases-MG</span></span>
+
                 </div>
                 <div className="user-pet-adoption-status">
                     <span className='user-pet-label'>Status da adoção:</span>

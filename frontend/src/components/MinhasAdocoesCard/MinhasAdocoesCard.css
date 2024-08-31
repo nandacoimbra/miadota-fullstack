@@ -1,7 +1,7 @@
 .user-wanted-pet {
     display: flex;
     width: 35rem;
-    height: 15rem;
+    min-height: 17rem;
     border: 1px solid transparent;
     border-radius: 2rem;
     background-color: var(--card-white);
@@ -12,7 +12,9 @@
 
 .user-pet-img-container img {
     width: 15rem;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     border-radius: 2rem 0 0 2rem;
 }
 
@@ -28,6 +30,10 @@
 
 .user-pet-label {
     font-weight: bold;
+    margin-bottom: 0.7rem;
+}
+.user-pet-label span{
+    font-weight: normal;
     margin-bottom: 0.5rem;
 }
 
