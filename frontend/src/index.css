@@ -4,7 +4,7 @@
   --footer-gray: #E5E5E5; 
   --darker-gray: #565264;
   --header-green: #92b6b1; 
-
+  --white: #ffffff;
   --btn-green: #028090;
   --orange-pantone: #F26419; 
   --prussian-blue: #13293D;
@@ -20,6 +20,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Poppins;
+  scroll-behavior: smooth;
 }
 
 body{

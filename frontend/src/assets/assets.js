@@ -48,7 +48,7 @@ export const petsParaAdocao = [
       {
         id: 2,
         imagem: timtim,
-        especie: "Gatos",
+        especie: "Cães",
         nome: "Tim Tim",
         sexo: "macho",
         cidade: "Cataguases",

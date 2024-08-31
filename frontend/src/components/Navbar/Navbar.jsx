@@ -22,7 +22,7 @@ const Navbar = () => {
                             <a className="nav-link" aria-current="page" href="#"  onClick={()=>setHamburgerOn(false)}>Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#"  onClick={()=>setHamburgerOn(false)}>Adotar</a>
+                            <a className="nav-link" href="#catalogo-de-pets"  onClick={()=>setHamburgerOn(false)}>Adotar</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#"  onClick={()=>setHamburgerOn(false)}>Cadastrar Pet</a>

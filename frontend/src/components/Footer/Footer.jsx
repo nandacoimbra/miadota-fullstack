@@ -4,7 +4,7 @@ import { Cat, Copyright, InstagramLogo, FacebookLogo, Envelope, User } from "pho
 
 const Footer = () => {
     return (
-        <div className="footer" id="footer">
+        <footer className="footer" id="footer">
             <div className="footer-container">
                 <div className="footer-container-left">
                     <Cat size={70} />
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <hr />
             <p className='copyright'>Todos os direitos reservados <Copyright size={16} /></p>
-        </div>
+        </footer>
     )
 }
 
