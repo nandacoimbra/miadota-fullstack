@@ -1,0 +1,14 @@
+.sidebar{
+    background-color: var(--footer-gray);
+    /* width: 20%; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.sidebar button{
+    border: 1px solid transparent;
+    text-align: left;
+}

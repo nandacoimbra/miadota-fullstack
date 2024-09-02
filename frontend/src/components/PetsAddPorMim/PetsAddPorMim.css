@@ -1,7 +1,7 @@
 .my-pet-card {
     display: flex;
     width: 35rem;
-    min-height: 17rem;
+    height: 17rem;
     border: 1px solid transparent;
     border-radius: 2rem;
     background-color: var(--card-white);
