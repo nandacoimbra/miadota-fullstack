@@ -5,6 +5,7 @@ import MinhasAdocoesCard from '../../components/MinhasAdocoesCard/MinhasAdocoesC
 import { AppContext } from '../../context/AppContext'
 import PetsAddPorMim from '../../components/PetsAddPorMim/PetsAddPorMim'
 import UserSidebar from '../../components/UserSidebar/UserSidebar'
+import InteressadosNoPetCard from '../../components/InteressadosNoPetCard/InteressadosNoPetCard'
 
 const User = () => {
   const { petsParaAdocao } = useContext(AppContext);
@@ -17,6 +18,7 @@ const User = () => {
           ? <DadosUsuario />
           : opcaoUsuario === "minhas-adocoes" ? <MinhasAdocoesCard /> : <PetsAddPorMim />
         }
+        <InteressadosNoPetCard/>
       </div>
     </div>
   )
