@@ -58,4 +58,8 @@
     height: 2rem;
     border: 1px solid transparent;
     border-radius: 1rem;
+    background-color: var(--footer-gray);
+}
+.interested-button-accept:hover, .interested-button-reject:hover{
+    background-color: var(--white);
 }

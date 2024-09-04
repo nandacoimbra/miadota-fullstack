@@ -6,6 +6,8 @@ import luna from './luna.jpg'
 import nick from './nick.jpg'
 import pingo from './pingo.jpg'
 import timtim from './timtim.jpg'
+import dna from './dna.png'
+import gender from './gender.png'
 
 
 
@@ -16,7 +18,9 @@ export const assets = {
     luna,
     nick,
     pingo,
-    timtim
+    timtim,
+    dna,
+    gender
 }
 
 export const listaDeEspecies = [

@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import LoginCadastro from './pages/LoginCadastro/LoginCadastro'
 import CadastroPet from './components/CadastroPet/CadastroPet'
 import User from './pages/User/User'
+import DetalhesAnimal from './pages/DetalhesAnimal/DetalhesAnimal'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/login' element={<LoginCadastro />} />
           <Route path='/cadastro-pet' element={<CadastroPet/>} />
           <Route path='/user' element={<User/>} />
+          <Route path='/detalhes-animal' element={<DetalhesAnimal/>} />
         </Routes>
       </div>
       <Footer />
