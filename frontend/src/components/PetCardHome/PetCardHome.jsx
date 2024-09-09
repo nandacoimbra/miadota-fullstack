@@ -9,9 +9,7 @@ const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status
 
     const mostraDetalhesPet = () => {
         // navega até a pág de detalhes do pet e passa os dados do pet pelo estado
-        navigate(`/detalhes/${id}`, {
-            state: { id, imagem, nome, sexo, cidade, estado, especie, descricao }
-        });
+        navigate(`/detalhes/${id}`);
     };
 
     return (
