@@ -53,5 +53,7 @@
     align-self: center;
     text-decoration: none;
     color: var(--btn-green);
+    border: none;
+    background-color: transparent;
 
 }
