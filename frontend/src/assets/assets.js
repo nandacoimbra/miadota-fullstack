@@ -45,7 +45,7 @@ export const petsParaAdocao = [
         sexo: "macho",
         cidade: "Cataguases",
         estado: "MG",
-        descricao: "",
+        descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti rem distinctio tenetur nobis veritatis consequatur ut reprehenderit. Voluptatibus, molestias rem. Enim perspiciatis quibusdam omnis delectus quaerat quo ullam corrupti eum?",
         status: true
   
       },

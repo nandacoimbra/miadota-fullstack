@@ -4,28 +4,29 @@ import { assets } from '../../assets/assets'
 import './DetalhesPet.css'
 
 
-const DetalhesPet = () => {
+const DetalhesPet = ({ imagem, nome, sexo, cidade, estado, descricao, especie }) => {
     return (
         <div className='pet-details-container'>
             <div className="pet-details-header-content">
                 <div className="pet-details-header">
                     <h3>Detalhes do Animal</h3>
+                    <h5>{nome}</h5>
                 </div>
                 <div className="pet-details-content">
                     <p className='pet-details-description'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque itaque ipsum deserunt nulla consequuntur repellendus quam, hic explicabo ut in officiis, numquam doloribus cum voluptate commodi molestias illo placeat aperiam.
+                        {descricao}
                     </p>
                     <ul className='pet-details-info'>
-                        <li> <img src={assets.dna} alt="" /> Gato</li>
-                        <li> <img src={assets.gender} alt="" /> Macho</li>
-                        <li> <MapPinLine size={32}/> Cataguases-MG</li>
+                        <li> <img src={assets.dna} alt="" /> {especie}</li>
+                        <li> <img src={assets.gender} alt="" /> {sexo}</li>
+                        <li> <MapPinLine size={32} /> {cidade}-{estado}</li>
                         <li>Responsável: Fernanda</li>
                     </ul>
                 </div>
                 <button className='pet-details-adopt-button'>Tenho interesse</button>
             </div>
             <div className="pet-details-img-container">
-                <img src={assets.nick} alt="" className="pet-details-img" />
+                <img src={imagem} alt="" className="pet-details-img" />
             </div>
 
         </div>
