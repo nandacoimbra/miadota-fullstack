@@ -34,17 +34,20 @@
 
 .add-pet-name,
 .add-pet-sex,
-.add-pet-description {
+.add-pet-description,
+.add-pet-species {
     display: flex;
     flex-direction: column;
 }
 
 .add-pet-city-state{
-    display: flex;
+    width: 100%;
+    display: flex; 
     gap: .5rem;
 }
 
 .pet-city, .pet-state{
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
