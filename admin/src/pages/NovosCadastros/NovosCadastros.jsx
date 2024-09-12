@@ -1,10 +1,15 @@
 import React from 'react'
 import './NovosCadastros.css'
+import PetCardAprovacao from '../../components/PetCardAprovacao/PetCardAprovacao.jsx'
 
 const NovosCadastros = () => {
   return (
-    <div>
-      
+    
+    <div className='new-requests'>
+      <PetCardAprovacao/>
+      <PetCardAprovacao/>
+      <PetCardAprovacao/>
+      <PetCardAprovacao/>
     </div>
   )
 }

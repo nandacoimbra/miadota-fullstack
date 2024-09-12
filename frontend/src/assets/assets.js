@@ -8,6 +8,8 @@ import pingo from './pingo.jpg'
 import timtim from './timtim.jpg'
 import dna from './dna.png'
 import gender from './gender.png'
+import image_upload from './upload.png'
+
 
 
 
@@ -20,7 +22,8 @@ export const assets = {
     pingo,
     timtim,
     dna,
-    gender
+    gender,
+    image_upload
 }
 
 export const listaDeEspecies = [

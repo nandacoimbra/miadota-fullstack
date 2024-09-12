@@ -8,19 +8,19 @@ const addPet = async (req, res) => {
     let nomeArquivoImagem = `${req.file.filename}`;
 
     const pet = new petModel({
-        especie: req.body.species,
-        nome: req.body.name,
-        sexo: req.body.sex,
-        cidade: req.body.city,
-        estado: req.body.state,
-        descricao: req.body.description,
-        imagem: nomeArquivoImagem,
-        status: true
+        nome: req.body.nome,
+        especie: req.body.especie,
+        sexo: req.body.sexo,
+        cidade: req.body.cidade,
+        estado: req.body.estado,
+        descricao: req.body.descricao,
+        status: req.body.status,
+        imagem: nomeArquivoImagem
     })
 
     try {
         await pet.save();
-        res.json({ success: true, message: "pet adicionado" });
+        res.json({ success: true, message: "Pet cadastrado com sucesso!" });
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" })

@@ -7,7 +7,7 @@ const petRouter = express.Router();
 
 // armazenamento de imagens dos pets na pasta uploads
 const storage = multer.diskStorage({
-    destination:"uploads",
+    destination:"./uploads",
     filename: (req,file,cb)=>{
         //ao add uma nova imagem de pet, a data e hora atual 
         //serão add no nome original do arquivo, criando um nome único
@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 
-petRouter.post("/add", upload.single("image"),addPet);
+petRouter.post("/add", upload.single("imagem"),addPet);
 petRouter.get("/list",listaPets);
 petRouter.delete("/remove",removePet);
 

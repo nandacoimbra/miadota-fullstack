@@ -4,18 +4,20 @@ import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
 import ListaPets from './pages/ListaPets/ListaPets'
 import NovosCadastros from './pages/NovosCadastros/NovosCadastros'
+import './App.css'
 
 const App = () => {
   return (
     <div>
       <Navbar />
-
       <div className="content">
         <Sidebar />
-        <Routes>
-          <Route path="/list" element={<ListaPets/>}/>
-          <Route path="/requests" element={<NovosCadastros/>}/>
-        </Routes>
+        <div className="admin-content">
+          <Routes>
+            <Route path="/list" element={<ListaPets />} />
+            <Route path="/requests" element={<NovosCadastros />} />
+          </Routes>
+        </div>
       </div>
     </div>
   )
