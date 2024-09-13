@@ -30,10 +30,16 @@ const ListaPets = () => {
   useEffect(() => {
     fetchList();
   }, [])
+
   return (
 
     <div className="available-pets">
-      <PetCardDisponivel />
+
+      {
+        petList.map((pet)=>{
+          return <PetCardDisponivel key={pet.id} imagem={`${url}/images/`+pet.imagem} nome={pet.nome} especie={pet.especie}/>
+        })
+      }
     </div>
   )
 }

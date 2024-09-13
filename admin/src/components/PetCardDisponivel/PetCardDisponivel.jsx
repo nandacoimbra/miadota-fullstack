@@ -1,17 +1,16 @@
 import React from 'react'
-import { assets } from '../../../../frontend/src/assets/assets'
 import './PetCardDisponivel.css'
 
-const PetCardDisponivel = () => {
+const PetCardDisponivel = ({nome,imagem,especie}) => {
     return (
         <div className="available-pet">
             <div className="available-pet-img-container" >
-                <img src={assets.nick} alt="" className="available-pet-img"/>
+                <img src={imagem} alt="" className="available-pet-img"/>
             </div>
             <div className="available-pet-data">
-                <h5>Nick</h5>
+                <h5>{nome}</h5>
                 <div className="available-pet-specie">
-                    <span className='available-pet-label'>Espécie: <span>Gato</span></span>
+                    <span className='available-pet-label'>Espécie: <span>{especie}</span></span>
 
                 </div>
                 <div className="available-pet-tutor">
