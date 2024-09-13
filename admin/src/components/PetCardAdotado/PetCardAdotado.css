@@ -1,0 +1,67 @@
+.adopted-pet {
+    display: flex;
+    width: 50rem;
+    min-height: 10rem;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    background-color: var(--card-white);
+    box-shadow: inset 0 -3em 3em rgba(235, 241, 235, 0.3),
+        0 0 0 2px var(--footer-gray),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.adopted-pet-img-container {
+    width: 20%;
+}
+
+.adopted-pet-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.adopted-pet-name-buttons {
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.adopted-pet-data {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+}
+
+.adopted-pet-data h5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.adopted-pet-label {
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.adopted-pet-label span {
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+.adopted-pet-local-description {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.adopted-pet-specie,
+.adopted-pet-local,
+.adopted-pet-tutor {
+    display: flex;
+    gap: 0.5rem;
+}
+
+

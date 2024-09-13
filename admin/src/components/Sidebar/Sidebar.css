@@ -27,6 +27,7 @@
     align-items: center;
     gap: 0.2rem;
     width: 100%;
+    padding: .5rem;
 }
 .sidebar-button{
     text-decoration: none;

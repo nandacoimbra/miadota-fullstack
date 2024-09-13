@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { assets } from '../../../../frontend/src/assets/assets';
 import PetCardAprovacao from '../../components/PetCardAprovacao/PetCardAprovacao';
+import PetCardDisponivel from '../../components/PetCardDisponivel/PetCardDisponivel';
 
 
 //lista pets disponíveis no site
@@ -32,7 +33,7 @@ const ListaPets = () => {
   return (
 
     <div className="available-pets">
-      {/* <PetCardAprovacao /> */}
+      <PetCardDisponivel />
     </div>
   )
 }

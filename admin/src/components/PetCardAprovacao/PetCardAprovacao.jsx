@@ -10,6 +10,7 @@ const PetCardAprovacao = () => {
 
     const alteraExpansao = () => {
         setCardExpandido(!cardExpandido);
+        console.log(cardExpandido);
     }
 
     return (
@@ -18,7 +19,15 @@ const PetCardAprovacao = () => {
                 <img src={assets.nick} alt="" />
             </div>
             <div className="new-pet-data">
-                <h5>Nick</h5>
+                <div className="new-pet-name-icons">
+                    <h5>Nick</h5>
+                    <div className="new-pet-see-more">
+                        {cardExpandido ? <CaretUp size={32} onClick={alteraExpansao} className='arrow-icon' /> :
+                            <CaretDown size={32} onClick={alteraExpansao} className='arrow-icon' />
+                        }
+                        <Trash size={32} className='trash-icon' />
+                    </div>
+                </div>
                 <div className="new-pet-specie">
                     <span className='new-pet-label'>Espécie: <span>Gato</span></span>
 
@@ -39,27 +48,14 @@ const PetCardAprovacao = () => {
                 </div>
 
                 <div className="new-pet-status">
-                    <span className='new-pet-label'>Status:</span>
-                    <div className="status-radio-buttons">
-                        <div className="status-approved">
-                            <input type='radio' name='new-pet-status' value={true} />
-                            <label>Aprovado</label>
-                        </div>
-                        <div className="status-failed">
-                            <input type='radio' name='new-pet-status' value={false} />
-                            <label>Reprovado</label>
-                        </div>
+                   <button className='approve-button'>Aprovar</button>
+                   <button className='disapprove-button'>Reprovar</button>
                     </div>
                 </div>
-                <div className="new-pet-see-more">
-                    {cardExpandido ? <CaretUp size={32} onClick={alteraExpansao} className='eye-icon' /> :
-                        <CaretDown size={32} onClick={alteraExpansao} className='eye-icon' />
-                    }
-                    <Trash size={32} className='trash-icon' />
-                </div>
+
             </div>
 
-        </div>
+       
     )
 }
 

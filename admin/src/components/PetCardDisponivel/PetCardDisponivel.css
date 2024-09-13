@@ -22,7 +22,7 @@
 
 }
 
-.new-pet-name-icons {
+.new-pet-name-buttons {
     display: flex;
     margin-bottom: .5rem;
 }
@@ -41,6 +41,7 @@
 }
 
 .new-pet-label {
+    width: 100%;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -67,49 +68,15 @@
     gap: 0.5rem;
 }
 
-.new-pet-status {
+.available-pet-status {
     display: flex;
-    gap: .5rem;
-    justify-content: center;
-    gap: 2rem;
+    gap: .6rem;
 
 }
 
-.new-pet-status button{
-    width: 6rem;
-    border: 1px solid transparent;
-    padding: .3rem;
-    background-color: var(--footer-gray);
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: .3rem;
-}
-.approve-button:hover{
-    border: 1px solid var(--header-green);
-    background-color: var(--header-green);
-    cursor: pointer;
-}
-.disapprove-button:hover{
-    border: 1px solid var(--orange-pantone);
-    background-color: var(--orange-pantone);
-    cursor: pointer;
+.new-pet-short {
+    display: none;
 }
 
-.new-pet-see-more {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
 
-}
 
-.arrow-icon,
-.trash-icon {
-    cursor: pointer;
-}
-
-.arrow-icon:hover,
-.trash-icon:hover {
-    cursor: pointer;
-    color: var(--btn-green);
-}
