@@ -1,4 +1,4 @@
-.new-pet {
+.available-pet {
     display: flex;
     width: 50rem;
     min-height: 10rem;
@@ -11,59 +11,59 @@
     overflow: hidden;
 }
 
-.new-pet-img-container {
+.available-pet-img-container {
     width: 20%;
 }
 
-.new-pet-img-container img {
+.available-pet-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
 }
 
-.new-pet-name-buttons {
+.available-pet-name-buttons {
     display: flex;
     margin-bottom: .5rem;
 }
 
-.new-pet-data {
+.available-pet-data {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     width: 100%;
 }
 
-.new-pet-data h5 {
+.available-pet-data h5 {
     font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
 }
 
-.new-pet-label {
+.available-pet-label {
     width: 100%;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.new-pet-label span {
+.available-pet-label span {
     font-weight: normal;
     margin-bottom: 0.5rem;
 }
 
-.new-pet-local-description {
+.available-pet-local-description {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
 }
 
-.new-pet-short {
+.available-pet-short {
     display: none;
 }
 
-.new-pet-specie,
-.new-pet-local,
-.new-pet-tutor {
+.available-pet-specie,
+.available-pet-local,
+.available-pet-tutor {
     display: flex;
     gap: 0.5rem;
 }
@@ -74,7 +74,7 @@
 
 }
 
-.new-pet-short {
+.available-pet-short {
     display: none;
 }
 
