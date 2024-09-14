@@ -35,7 +35,8 @@
 .add-pet-name,
 .add-pet-sex,
 .add-pet-description,
-.add-pet-species {
+.add-pet-species,
+.add-pet-responsavel {
     display: flex;
     flex-direction: column;
 }

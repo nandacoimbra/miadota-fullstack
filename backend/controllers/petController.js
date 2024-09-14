@@ -15,6 +15,8 @@ const addPet = async (req, res) => {
         estado: req.body.estado,
         descricao: req.body.descricao,
         status: req.body.status,
+        adotado: req.body.adotado,
+        responsavel: req.body.responsavel,
         imagem: nomeArquivoImagem
     })
 

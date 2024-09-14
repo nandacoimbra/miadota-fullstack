@@ -11,12 +11,14 @@ const CadastroPet = () => {
     const [imagem, setImagem] = useState(false);
     const [data, setData] = useState({
         nome: "",
-        especie: "cao",
-        sexo: "femea",
+        especie: "gato",
+        sexo: "macho",
         cidade: "",
         estado: "",
         descricao: "",
-        status: false
+        status: false,
+        adotado: false,
+        responsavel: "",
     })
 
     const onChangeHandler = (event) => {
@@ -38,6 +40,8 @@ const CadastroPet = () => {
         dadosForm.append("descricao", data.descricao);
         dadosForm.append("status", data.status);
         dadosForm.append("imagem", imagem);
+        dadosForm.append("responsavel", data.responsavel);
+        dadosForm.append("adotado", data.adotado);
 
         const response = await axios.post(`${url}/pet/add`, dadosForm);
 
@@ -49,11 +53,14 @@ const CadastroPet = () => {
                 cidade: "",
                 estado: "",
                 descricao: "",
-                status: false
+                status: false,
+                adotado: false,
+                responsavel: ""
+
             });
             setImagem(false);
             toast.success(response.data.message);
-            
+
         } else {
             toast.error(response.data.message);
         }
@@ -91,6 +98,10 @@ const CadastroPet = () => {
                         <label htmlFor="">Estado:</label>
                         <input type="text" name='estado' onChange={onChangeHandler} value={data.estado} />
                     </div>
+                </div>
+                <div className='add-pet-responsavel'>
+                    <label htmlFor="">Responsável:</label>
+                    <input onChange={onChangeHandler} value={data.responsavel} type="text" name='responsavel' />
                 </div>
                 <div className='add-pet-description'>
                     <label htmlFor="">Descrição:</label>

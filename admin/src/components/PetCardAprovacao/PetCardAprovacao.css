@@ -10,6 +10,13 @@
         0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
+.new-pet hr{
+    width: 100%;
+    border: 1px solid var(--header-green);
+    /* border: 1px solid rgb(190, 190, 190); */
+    height: 1px;
+    margin-bottom: .5rem;
+}
 
 .new-pet-img-container {
     width: 20%;
@@ -35,9 +42,11 @@
 }
 
 .new-pet-data h5 {
+    width: 100%;
     font-size: 1.4rem;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
+    
 }
 
 .new-pet-label {

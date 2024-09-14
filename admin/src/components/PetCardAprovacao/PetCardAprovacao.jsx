@@ -4,7 +4,7 @@ import { assets } from '../../../../frontend/src/assets/assets';
 import { CaretDown, CaretUp, Trash } from "phosphor-react"
 
 
-const PetCardAprovacao = () => {
+const PetCardAprovacao = ({ nome, imagem, especie, cidade, estado, descricao, status, responsavel }) => {
 
     const [cardExpandido, setCardExpandido] = useState(false);
 
@@ -16,11 +16,11 @@ const PetCardAprovacao = () => {
     return (
         <div className={`new-pet ${cardExpandido ? 'expanded' : ''}`}>
             <div className="new-pet-img-container" >
-                <img src={assets.nick} alt="" />
+                <img src={imagem} alt="" />
             </div>
             <div className="new-pet-data">
                 <div className="new-pet-name-icons">
-                    <h5>Nick</h5>
+                    <h5>{nome}</h5>
                     <div className="new-pet-see-more">
                         {cardExpandido ? <CaretUp size={32} onClick={alteraExpansao} className='arrow-icon' /> :
                             <CaretDown size={32} onClick={alteraExpansao} className='arrow-icon' />
@@ -28,34 +28,35 @@ const PetCardAprovacao = () => {
                         <Trash size={32} className='trash-icon' />
                     </div>
                 </div>
+                <hr />
                 <div className="new-pet-specie">
-                    <span className='new-pet-label'>Espécie: <span>Gato</span></span>
+                    <span className='new-pet-label'>Espécie: <span>{especie}</span></span>
 
                 </div>
                 <div className="new-pet-tutor">
-                    <span className='new-pet-label'>Responsável: <span>Fernanda Souza Coimbra Machado</span></span>
+                    <span className='new-pet-label'>Responsável: <span>{responsavel}</span></span>
 
                 </div>
                 < div className={`new-pet-local-description ${cardExpandido ? '' : 'new-pet-short'}`}>
                     <div className="new-pet-local">
-                        <span className='new-pet-label'>Local: <span>Cataguases-MG</span></span>
+                        <span className='new-pet-label'>Local: <span>{cidade}-{estado}</span></span>
 
                     </div>
                     <div className="new-pet-description">
-                        <span className='new-pet-label'>Descrição: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci ea nam, amet maxime, consequuntur quisquam quidem odio ipsam illo ratione alias optio, asperiores officia. Cumque vitae nobis natus expedita. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cum quaerat dignissimos suscipit tenetur doloribus perferendis necessitatibus fuga, molestias consequatur nostrum ut natus magnam. Magni sunt vero fugiat iure aperiam.</span></span>
+                        <span className='new-pet-label'>Descrição: <span>{descricao}</span></span>
 
                     </div>
                 </div>
 
                 <div className="new-pet-status">
-                   <button className='approve-button'>Aprovar</button>
-                   <button className='disapprove-button'>Reprovar</button>
-                    </div>
+                    <button className='approve-button'>Aprovar</button>
+                    <button className='disapprove-button'>Reprovar</button>
                 </div>
-
             </div>
 
-       
+        </div>
+
+
     )
 }
 
