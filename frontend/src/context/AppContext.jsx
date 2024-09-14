@@ -1,11 +1,20 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { petsParaAdocao } from "../assets/assets";
 
 export const AppContext = createContext(null);
 
+
+
 const AppContextProvider = (props) => {
+
+    const url = "http://localhost:3000";
+    const [token, setToken] = useState("");
+    
     const contextValue = {
-        petsParaAdocao
+        petsParaAdocao,
+        url,
+        token,
+        setToken
     }
 
     return (
