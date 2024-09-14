@@ -37,7 +37,7 @@ const ListaPets = () => {
 
       {
         petList.filter(pet=>pet.status===true).map((pet)=>{
-          return <PetCardDisponivel key={pet.id} imagem={`${url}/images/`+pet.imagem} nome={pet.nome} especie={pet.especie} responsavel={pet.responsavel}/>
+          return <PetCardDisponivel key={pet._id} imagem={`${url}/images/`+pet.imagem} nome={pet.nome} especie={pet.especie} responsavel={pet.responsavel}/>
         })
       }
     </div>

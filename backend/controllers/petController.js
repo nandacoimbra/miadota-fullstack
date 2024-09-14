@@ -60,14 +60,15 @@ const removePet = async (req, res) => {
 //altera o status do pet para aprovado=true, disponivel para adocao
 const alteraStatusPet = async (req, res) => {
     try {
+        const petId = req.params.id;
         const petStatusAtualizado = await petModel.findByIdAndUpdate(
-            req.body.id, //id do pet
+            petId, //id do pet
             { status: true }, //muda o status para true
             { new: true } //retorna o documento atualizado
         )
 
         if (!petStatusAtualizado) {
-           return res.json({ message: "Pet não encontrado" })
+            return res.json({ message: "Pet não encontrado" })
         }
 
         res.json({ success: true, message: "Status do pet alterado com sucesso" })

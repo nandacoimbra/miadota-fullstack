@@ -4,7 +4,8 @@ import { assets } from '../../../../frontend/src/assets/assets';
 import { CaretDown, CaretUp, Trash } from "phosphor-react"
 
 
-const PetCardAprovacao = ({ nome, imagem, especie, cidade, estado, descricao, status, responsavel }) => {
+
+const PetCardAprovacao = ({ id, nome, imagem, especie, cidade, estado, descricao, status, responsavel, alteraStatus }) => {
 
     const [cardExpandido, setCardExpandido] = useState(false);
 
@@ -12,6 +13,11 @@ const PetCardAprovacao = ({ nome, imagem, especie, cidade, estado, descricao, st
         setCardExpandido(!cardExpandido);
         console.log(cardExpandido);
     }
+
+    const handleAprovar = () => {
+        alteraStatus(id, true); // Atualiza o status para true
+        
+      };
 
     return (
         <div className={`new-pet ${cardExpandido ? 'expanded' : ''}`}>
@@ -49,7 +55,7 @@ const PetCardAprovacao = ({ nome, imagem, especie, cidade, estado, descricao, st
                 </div>
 
                 <div className="new-pet-status">
-                    <button className='approve-button'>Aprovar</button>
+                    <button className='approve-button' onClick={handleAprovar}>Aprovar</button>
                     <button className='disapprove-button'>Reprovar</button>
                 </div>
             </div>
