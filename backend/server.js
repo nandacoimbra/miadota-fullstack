@@ -2,6 +2,9 @@ import express from "express"
 import cors from "cors"
 import { dbConnect } from "./config/db.js";
 import petRouter from "./routes/petRoute.js";
+import userRouter from "./routes/userRoute.js";
+import 'dotenv/config'
+
 
 
 //configuracao da app
@@ -18,6 +21,8 @@ dbConnect();
 //api endpoint
 app.use("/pet", petRouter);
 app.use("/images",express.static('uploads'));
+app.use("/user",userRouter);
+
 app.get("/",(req,res)=>{
     res.send("Api funcionando");
 })
