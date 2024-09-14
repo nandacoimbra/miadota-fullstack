@@ -1,4 +1,3 @@
-import { Console } from 'console';
 import petModel from '../models/petModel.js'
 //file system já disponível no node
 import fs from 'fs'
@@ -54,8 +53,30 @@ const removePet = async (req, res) => {
         res.json({ sucess: true, message: "Pet excluído!" })
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:"Error"});
+        res.json({ success: false, message: "Error" });
     }
 }
 
-export { addPet, listaPets, removePet }
+//altera o status do pet para aprovado=true, disponivel para adocao
+const alteraStatusPet = async (req, res) => {
+    try {
+        const petStatusAtualizado = await petModel.findByIdAndUpdate(
+            req.body.id, //id do pet
+            { status: true }, //muda o status para true
+            { new: true } //retorna o documento atualizado
+        )
+
+        if (!petStatusAtualizado) {
+           return res.json({ message: "Pet não encontrado" })
+        }
+
+        res.json({ success: true, message: "Status do pet alterado com sucesso" })
+
+
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Erro ao alterar status do pet" })
+    }
+}
+
+export { addPet, listaPets, removePet, alteraStatusPet }

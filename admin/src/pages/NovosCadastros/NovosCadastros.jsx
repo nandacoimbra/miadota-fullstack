@@ -11,7 +11,7 @@ const NovosCadastros = () => {
   const url = "http://localhost:3000";
   const [petList, setPetList] = useState([]);
 
-  //chamada da api
+  //chamada lista pet da api
   const fetchList = async () => {
     const response = await axios.get(`${url}/pet/list`);
     console.log(response.data);
