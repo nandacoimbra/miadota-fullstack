@@ -48,7 +48,7 @@ const Navbar = () => {
                                 : <div className="nav-user-profile">
                                     <User size={32} className="nav-user-icon"/>
                                     <ul className="nav-profile-dropdown">
-                                        <li onClick={() => { navigate("/user") }}><span>Minha Conta</span></li>
+                                        <li onClick={() => { navigate("/user/data") }}><span>Minha Conta</span></li>
                                         <hr />
                                         <li onClick={logout}><span>Sair</span></li>
                                     </ul>

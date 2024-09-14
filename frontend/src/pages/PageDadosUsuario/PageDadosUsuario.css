@@ -1,0 +1,13 @@
+.user-data-page{
+    display: flex;
+    width: 100%;
+  
+}
+
+.user-data-content{
+    width: 100%;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+

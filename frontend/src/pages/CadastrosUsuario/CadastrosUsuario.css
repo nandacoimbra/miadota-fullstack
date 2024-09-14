@@ -1,0 +1,13 @@
+.user-added-page{
+    display: flex;
+    width: 100%;
+   
+}
+
+.user-added-page-content{
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+

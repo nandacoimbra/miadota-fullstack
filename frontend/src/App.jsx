@@ -10,20 +10,27 @@ import User from './pages/User/User'
 import DetalhesAnimal from './pages/DetalhesAnimal/DetalhesAnimal'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PageDadosUsuario from './pages/PageDadosUsuario/PageDadosUsuario'
+import AdocoesUsuario from './pages/AdocoesUsuario/AdocoesUsuario'
+import CadastrosUsuario from './pages/CadastrosUsuario/CadastrosUsuario'
+import NovoPetUsuario from './pages/NovoPetUsuario/NovoPetUsuario'
 
 const App = () => {
   return (
     <>
 
       <div className='app'>
-        <ToastContainer
-          theme='colored' />
+        <ToastContainer theme='colored' />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginCadastro />} />
           <Route path='/cadastro-pet' element={<CadastroPet />} />
-          <Route path='/user' element={<User />} />
+          {/* <Route path='/user' element={<User />} /> */}
+          <Route path='/user/data' element={<PageDadosUsuario/>} />
+          <Route path='/user/adoptions' element={<AdocoesUsuario/>} />
+          <Route path='/user/mypets' element={<CadastrosUsuario/>} />
+          <Route path='/user/newpet' element={<NovoPetUsuario/>} />
           <Route path='/detalhes/:id' element={<DetalhesAnimal />} />
         </Routes>
       </div>

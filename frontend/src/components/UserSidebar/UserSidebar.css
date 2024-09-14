@@ -1,14 +1,34 @@
-.sidebar{
+.user-sidebar{
     background-color: var(--footer-gray);
-    /* width: 20%; */
+    width: 18%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
+   
 }
 
-.sidebar button{
-    border: 1px solid transparent;
+.user-sidebar-link{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: 2px solid transparent;
     text-align: left;
+    text-decoration: none;
+    color: black;
+    padding: .3rem 0;
+}
+.user-sidebar-link.active{
+   border-bottom-color: var(--header-green);
+
+}
+@media (max-width: 945px){
+    .user-sidebar{
+       width: 10%;
+    }
+    .user-sidebar-link span{
+        display: none;
+    }
 }
