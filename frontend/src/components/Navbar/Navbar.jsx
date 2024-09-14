@@ -3,13 +3,23 @@ import { useState } from 'react';
 import './Navbar.css'
 import { Cat, User, SignOut, UserSquare } from "phosphor-react";
 import { assets } from '../../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+
 
 const Navbar = () => {
 
     const [hamburgerOn, setHamburgerOn] = useState(false);
-    const { token } = useContext(AppContext);
+    const { token, setToken } = useContext(AppContext);
+    const navigate = useNavigate();
+
+    //logout do usuario
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken("");
+        navigate("/");
+
+    }
 
     return (
 
@@ -34,13 +44,13 @@ const Navbar = () => {
                             <a className="nav-link" href="#footer" onClick={() => setHamburgerOn(false)}>Contato</a>
                         </li>
                         <li className="nav-item">
-                            {!token ? <button className='nav-login-button'>Entrar</button>
+                            {!token ? <Link className='nav-login-button' to="/login">Entrar</Link>
                                 : <div className="nav-user-profile">
-                                    <User size={32} />
+                                    <User size={32} className="nav-user-icon"/>
                                     <ul className="nav-profile-dropdown">
-                                        <li><span>Minha Conta</span></li>
+                                        <li onClick={() => { navigate("/user") }}><span>Minha Conta</span></li>
                                         <hr />
-                                        <li><span>Sair</span></li>
+                                        <li onClick={logout}><span>Sair</span></li>
                                     </ul>
                                 </div>
                             }

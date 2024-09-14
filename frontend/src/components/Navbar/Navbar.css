@@ -35,6 +35,10 @@
     height: 2rem;
     border: .5px solid var(--btn-green);
     border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+    color: black;
 }
 .nav-login-button:hover{
     background-color: var(--btn-green);
@@ -52,6 +56,9 @@
     right: 0;
     z-index: 1;
 
+}
+.nav-user-icon{
+    cursor: pointer;
 }
 
 .nav-user-profile hr{

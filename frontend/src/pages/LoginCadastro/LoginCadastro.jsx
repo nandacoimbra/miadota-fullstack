@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginCadastro = () => {
 
+  const navigate = useNavigate();
   const { url, setToken } = useContext(AppContext);
   const [loginCadastro, setLoginCadastro] = useState("login");
   const [data, setData] = useState({
@@ -27,20 +28,30 @@ const LoginCadastro = () => {
   const onLogin = async (event) => {
     event.preventDefault();
     let novaUrl = url;
+    let navAddress = "";
     if (loginCadastro === "login") {
       novaUrl += "/user/login";
+      navAddress += "/";
     }
     else {
       novaUrl += "/user/register";
+      navAddress += "/user";
     }
 
-    //chamada da api
-    const response = await axios.post(novaUrl, data);
+    try {
+      //chamada da api
+      const response = await axios.post(novaUrl, data);
 
-    //se for verdadeiro, o usuario conseguiu logar ou se registrar
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
+      //se for verdadeiro, o usuario conseguiu logar ou se registrar
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        navigate(navAddress);
+
+      }
+
+    } catch (error) {
+      console.log(error);
 
     }
   }
