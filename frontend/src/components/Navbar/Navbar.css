@@ -30,6 +30,8 @@
 
 }
 
+
+
 .nav-login-button{
     width: 7rem;
     height: 2rem;
@@ -47,6 +49,11 @@
 
 .nav-user-profile{
     position: relative;
+}
+
+.show{
+ background-color: var(--footer-gray);   
+ padding: 1rem 1rem;
 }
 
 .nav-profile-dropdown{
