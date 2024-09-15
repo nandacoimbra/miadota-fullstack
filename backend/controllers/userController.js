@@ -82,7 +82,7 @@ const cadastraUsuario = async (req, res) => {
 }
 
 const adicionaPetDeInteresse = async (req, res) => {
-    
+
     const { idPet } = req.body;
     const { idUsuario } = req.user;
 
@@ -108,4 +108,30 @@ const adicionaPetDeInteresse = async (req, res) => {
     }
 }
 
-export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse }
+const listaPetsDeInteresse = async (req, res) => {
+    try {
+        //busca o id do usuário logado a partir do middleware de auth
+        const { idUsuario } = req.user;
+
+        // Encontra o usuário pelo ID e popula o campo petsTenhoInteresse com os detalhes dos pets
+        const usuario = await userModel.findById(idUsuario).populate('petsTenhoInteresse');
+
+        if (!usuario) {
+            return res.status(404).json({ success: false, message: "Usuário não encontrado" });
+        }
+
+        // Verifica se a lista de pets de interesse está vazia
+        if (usuario.petsTenhoInteresse.length === 0) {
+            return res.status(200).json({ success: true, message: "Nenhum pet na lista de interesse" });
+        }
+
+        // Retorna a lista de pets de interesse
+        res.status(200).json({ success: true, data: usuario.petsTenhoInteresse });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Erro ao buscar lista de pets de interesse" });
+    }
+}
+
+export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse, listaPetsDeInteresse }
