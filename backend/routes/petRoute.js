@@ -1,5 +1,5 @@
 import express from 'express'
-import { addPet, alteraStatusPet, listaPets, removePet } from '../controllers/petController.js'
+import { addPet, alteraStatusPet, filtraPets, listaPets, removePet } from '../controllers/petController.js'
 //para o sistema de armazenamento de imagem
 import multer from "multer"
 
@@ -21,6 +21,7 @@ petRouter.post("/add", upload.single("imagem"), addPet);
 petRouter.get("/list", listaPets);
 petRouter.delete("/remove", removePet);
 petRouter.patch("/status/:id", alteraStatusPet);
+petRouter.get("/filter", filtraPets);
 
 
 export default petRouter;

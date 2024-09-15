@@ -13,7 +13,7 @@ const FilterSpecies = ({ especie, setEspecie }) => {
             <div className="lista-especies">
                 {listaDeEspecies.map((animal) => {
                     return (
-                        <div onClick={() => setEspecie(prev => prev === animal.especie ? "todos" : animal.especie)} key={animal.id} className="especie">
+                        <div onClick={() => setEspecie(prev => prev === animal.especie ? "" : animal.especie)} key={animal.id} className="especie">
                             <img className={especie === animal.especie ? "active" : ""} src={animal.imagem} alt="" />
                             {
                                 animal.especie === "gato" ? <p>Gatos</p>

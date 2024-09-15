@@ -3,6 +3,7 @@
     background-color: var(--footer-gray);
     color: var(--bs-primary-text);
     height: 15vh;
+    width: 100%;
 }
 
 .nav-items{
@@ -54,6 +55,7 @@
 .show{
  background-color: var(--footer-gray);   
  padding: 1rem 1rem;
+ opacity: 0.9;
 }
 
 .nav-profile-dropdown{
@@ -62,6 +64,7 @@
     display: none;
     right: 0;
     z-index: 1;
+    opacity: 1;
 
 }
 .nav-user-icon{

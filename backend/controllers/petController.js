@@ -80,4 +80,48 @@ const alteraStatusPet = async (req, res) => {
     }
 }
 
-export { addPet, listaPets, removePet, alteraStatusPet }
+//filtra pets por query params
+const filtraPets = async (req, res) => {
+    try {
+
+        //parametros extraidos das query (se houver)
+        const { status, adotado, especie, cidade, estado, sexo } = req.query;
+        let filtro = {};
+
+        if (status) {
+            // Converte o status para booleano
+            const statusBooleano = status === 'true';
+            filtro.status = statusBooleano;
+        }
+
+        if (especie) {
+            filtro.especie = especie; // Filtra por espécie 
+        }
+
+        if (cidade) {
+            filtro.cidade = cidade; // Filtra por cidade
+        }
+
+        if (sexo) {
+            filtro.sexo = sexo; // Filtra por sexo 
+        }
+
+        const pets = await petModel.find(filtro);
+
+        if (!pets || pets.length === 0) {
+            return res.status(404).json({ success: false, message: "Nenhum pet encontrado" });
+
+        }
+
+
+        // Retorna os pets encontrados
+        res.status(200).json({ success: true, data: pets });
+
+
+    } catch (error) {
+        console.log("Erro ao buscar pets", error);
+        res.status(500).json({ success: false, message: "Erro ao buscar pets" });
+    }
+}
+
+export { addPet, listaPets, removePet, alteraStatusPet, filtraPets }

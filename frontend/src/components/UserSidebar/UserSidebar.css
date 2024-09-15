@@ -1,7 +1,6 @@
 .user-sidebar{
     background-color: var(--footer-gray);
     width: 18%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;

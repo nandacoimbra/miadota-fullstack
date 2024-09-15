@@ -6,7 +6,7 @@ import CatalogoDePets from '../../components/CatalogoDePets/CatalogoDePets'
 
 const Home = () => {
 
-  const [especie, setEspecie] = useState("todos");
+  const [especie, setEspecie] = useState("");
   return (
     <div className='home-page'>
       <Header />

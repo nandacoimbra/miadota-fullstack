@@ -11,7 +11,7 @@
 }
 
 .filtra-especies-text {
-    max-width: 60%;
+    max-width: 100%;
 }
 
 .lista-especies img{
@@ -31,7 +31,7 @@
     align-items: center;
     gap: 2rem;
     text-align: center;
-    margin: 1rem 0rem;
+    /* margin: 1rem 0rem; */
 }
 .lista-especies .active{
     border: 4px solid var(--btn-green);
