@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 import './DetalhesPet.css'
 
 
-const DetalhesPet = ({ imagem, nome, sexo, cidade, estado, descricao, especie }) => {
+const DetalhesPet = ({ imagem, nome, sexo, cidade, estado, descricao, especie,url }) => {
     return (
         <div className='pet-details-container'>
             <div className="pet-details-header-content">
@@ -26,7 +26,7 @@ const DetalhesPet = ({ imagem, nome, sexo, cidade, estado, descricao, especie })
                 <button className='pet-details-adopt-button'>Tenho interesse</button>
             </div>
             <div className="pet-details-img-container">
-                <img src={imagem} alt="" className="pet-details-img" />
+                <img src={url+"/images/"+imagem} alt="" className="pet-details-img" />
             </div>
 
         </div>

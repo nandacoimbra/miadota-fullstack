@@ -3,7 +3,7 @@ import './PetCardHome.css'
 import { MapPinLine } from 'phosphor-react'
 import { useNavigate } from 'react-router-dom'
 
-const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status, especie }) => {
+const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status, especie, url }) => {
 
     const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status
     return (
         <div className='pet-card-body'>
             <div className="pet-card-img-container">
-                <img src={imagem} alt="" />
+                <img src={url+"/images/"+imagem} alt="" />
             </div>
             <div className="pet-card-info">
                 <h6 className='pet-nome'>{nome}</h6>

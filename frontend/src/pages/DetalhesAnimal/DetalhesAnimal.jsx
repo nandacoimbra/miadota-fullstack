@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import './DetalhesAnimal.css'
 import DetalhesPet from '../../components/DetalhesPet/DetalhesPet'
-import { petsParaAdocao } from '../../assets/assets';
+// import { petsParaAdocao } from '../../assets/assets';
 import Loading from '../../components/Loading/Loading';
+import { AppContext } from '../../context/AppContext'
 
 
 const DetalhesAnimal = () => {
 
   const { id } = useParams();  // Recupera o ID da URL
   const [pet, setPet] = useState(null);
+  const { petsParaAdocao, url } = useContext(AppContext);
 
   useEffect(() => {
     // Busca o pet correspondente pelo ID na lista de pets
-    const petEncontrado = petsParaAdocao.find(pet => pet.id.toString() === id);
+    const petEncontrado = petsParaAdocao.find(pet => pet._id === id);
     console.log(petEncontrado);
     setPet(petEncontrado);
   }, [id]);
@@ -34,6 +36,7 @@ const DetalhesAnimal = () => {
         estado={pet.estado}
         descricao={pet.descricao}
         especie={pet.especie}
+        url={url}
       />
     </div>
   )

@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
-import { petsParaAdocao } from "../assets/assets";
-
+import { createContext, useEffect, useState } from "react";
+import axios from 'axios'
+import { assets } from "../assets/assets";
 export const AppContext = createContext(null);
 
 
@@ -9,7 +9,23 @@ const AppContextProvider = (props) => {
 
     const url = "http://localhost:3000";
     const [token, setToken] = useState("");
-    
+    const [petsParaAdocao, setPetsParaAdocao] = useState([])
+
+    const fetchPetList = async () => {
+        const response = await axios.get(url + "/pet/list");
+        setPetsParaAdocao(response.data.data)
+    }
+    useEffect(() => {
+        async function carregaDados() {
+            await fetchPetList();
+            if (localStorage.getItem("token")) {
+                setToken(localStorage.getItem("token"))
+            }
+
+        }
+        carregaDados();
+    }, [])
+
     const contextValue = {
         petsParaAdocao,
         url,

@@ -15,7 +15,11 @@ const FilterSpecies = ({ especie, setEspecie }) => {
                     return (
                         <div onClick={() => setEspecie(prev => prev === animal.especie ? "todos" : animal.especie)} key={animal.id} className="especie">
                             <img className={especie === animal.especie ? "active" : ""} src={animal.imagem} alt="" />
-                            <p>{animal.especie}</p>
+                            {
+                                animal.especie === "gato" ? <p>Gatos</p>
+                                    : <p>Cães</p>
+                            }
+
                         </div>
                     )
                 })}

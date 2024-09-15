@@ -29,12 +29,12 @@ export const assets = {
 export const listaDeEspecies = [
     {   
         id: 1,
-        especie: "Gatos",
+        especie: "gato",
         imagem: cat_category
     },
     {
         id: 2,
-        especie: "Cães",
+        especie: "cao",
         imagem: dog_category
     }
 ]
