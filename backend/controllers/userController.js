@@ -81,4 +81,31 @@ const cadastraUsuario = async (req, res) => {
     }
 }
 
-export { loginUsuario, cadastraUsuario }
+const adicionaPetDeInteresse = async (req, res) => {
+    
+    const { idPet } = req.body;
+    const { idUsuario } = req.user;
+
+    try {
+        const usuario = await userModel.findById(idUsuario);
+        // Verifica se o usuário foi encontrado
+        if (!usuario) {
+            return res.status(404).json({ success: false, message: "Usuário não encontrado" });
+        }
+
+        //verifica se o pet já esta na lista de interesse
+        if (usuario.petsTenhoInteresse.includes(idPet)) {
+            return res.json({ success: false, message: "Pet já adicionado à lista de interesse" });
+        }
+        //add o id do pet ao array petsTenhoInteresse
+        usuario.petsTenhoInteresse.push(idPet);
+        await usuario.save();
+        res.json({ success: true, message: "Pet adicionado à lista de interesse", usuario });
+
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Erro ao adicionar pet de interesse" });
+    }
+}
+
+export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse }
