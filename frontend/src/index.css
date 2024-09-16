@@ -3,9 +3,12 @@
 :root{
   --footer-gray: #E5E5E5; 
   --darker-gray: #565264;
-  --header-green: #92b6b1; 
+  --header-green: #7bc9c9; 
+  /* --header-green: #92b6b1;  */
+  --header-darker-green: #40d3c9; 
   --white: #ffffff;
   --btn-green: #028090;
+  --btn-darker-green: #006775;
   --card-white: #FAFAF5;
   --orange-pantone: #F26419; 
   --prussian-blue: #13293D;

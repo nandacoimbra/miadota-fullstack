@@ -13,7 +13,7 @@ const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status
     };
 
     return (
-        <div className='pet-card-body'>
+        <div className='pet-card-body' onClick={mostraDetalhesPet}>
             <div className="pet-card-img-container">
                 <img src={url+"/images/"+imagem} alt="" />
             </div>
@@ -21,10 +21,10 @@ const PetCardHome = ({ id, imagem, nome, sexo, cidade, estado, descricao, status
                 <h6 className='pet-nome'>{nome}</h6>
                 <p className='pet-sexo'>{sexo}</p>
                 <div className="pet-local">
-                    <MapPinLine size={25} />
+                    <MapPinLine size={20} />
                     <p>{cidade} - {estado}</p>
                 </div>
-                <button className='detalhes-button' onClick={mostraDetalhesPet}>Detalhes</button>
+                <button className='detalhes-button' onClick={mostraDetalhesPet}>Adotar</button>
             </div>
         </div>
     )
