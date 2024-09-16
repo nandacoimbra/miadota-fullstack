@@ -17,7 +17,7 @@ const MinhasAdocoesCard = ({pet,url}) => {
 
                 </div>
                 <div className="user-pet-tutor">
-                    <span className='user-pet-label'>Responsável: <span>{pet.responsavel}</span></span>
+                    <span className='user-pet-label'>Responsável: <span>{pet.responsavel.nome}</span></span>
 
                 </div>
                 <div className="user-pet-local">

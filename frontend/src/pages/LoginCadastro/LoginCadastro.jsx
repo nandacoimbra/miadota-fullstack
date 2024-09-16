@@ -35,7 +35,7 @@ const LoginCadastro = () => {
     }
     else {
       novaUrl += "/user/register";
-      navAddress += "/user";
+      navAddress += "/user/data";
     }
 
     try {

@@ -81,6 +81,23 @@ const cadastraUsuario = async (req, res) => {
     }
 }
 
+const buscaUsuarioPorId = async (req, res) => {
+    try {
+        const idUsuario = req.params.id;
+        //busca o usuario no banco
+        const usuario = await userModel.findById(idUsuario);
+        // Verifica se o usuário existe
+        if (!usuario) {
+            return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+        }
+        // Retorna o usuário encontrado
+        return res.status(200).json({ success: true, data: usuario });
+    } catch (error) {
+        console.error("Erro ao buscar usuário por ID:", error);
+        return res.status(500).json({ success: false, message: 'Erro no servidor' });
+    }
+}
+
 const adicionaPetDeInteresse = async (req, res) => {
 
     const { idPet } = req.body;
@@ -114,8 +131,13 @@ const listaPetsDeInteresse = async (req, res) => {
         const { _id } = req.user;
 
         // Encontra o usuário pelo ID e popula o campo petsTenhoInteresse com os detalhes dos pets
-        const usuario = await userModel.findById(_id).populate('petsTenhoInteresse');
-
+        const usuario = await userModel.findById(_id).populate('petsTenhoInteresse').populate({
+            path: 'petsTenhoInteresse',
+            populate: {
+                path: 'responsavel',
+                select: 'nome email telefone cidade estado'
+            }
+        });
         if (!usuario) {
             return res.status(404).json({ success: false, message: "Usuário não encontrado" });
         }
@@ -134,4 +156,26 @@ const listaPetsDeInteresse = async (req, res) => {
     }
 }
 
-export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse, listaPetsDeInteresse }
+const obterUsuariosPorPetInteresse = async (req,res) => {
+    const { idPet } = req.params;
+
+    try {
+        // Busca direta no modelo de usuários que têm interesse no pet especificado
+        const usuarios = await userModel.find({
+            petsTenhoInteresse: idPet
+        }).select('nome email cidade estado telefone');;
+
+        res.json({
+            success: true,
+            data:usuarios
+        });
+    } catch (error) {
+        console.error("Erro ao obter usuários com interesse no pet:", error);
+        res.status(500).json({
+            success: false,
+            message: 'Erro ao buscar usuários'
+        });
+    }
+};
+
+export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse, listaPetsDeInteresse, buscaUsuarioPorId, obterUsuariosPorPetInteresse }

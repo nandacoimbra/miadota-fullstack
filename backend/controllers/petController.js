@@ -132,4 +132,23 @@ const filtraPets = async (req, res) => {
     }
 }
 
-export { addPet, listaPets, removePet, alteraStatusPet, filtraPets }
+const buscaPetsPorResponsavel = async (req, res) => {
+    const {_id} = req.user;
+
+    try {
+        // Busca direta no modelo de pets com base no ID do responsável
+        const pets = await petModel.find({ responsavel: _id });
+        res.json({
+            success: true,
+            data: pets
+        });
+    } catch (error) {
+        console.error("Erro ao buscar pets por responsável:", error);
+        res.status(500).json({
+            success: false,
+            message: 'Erro ao buscar pets'
+        });
+    }
+}
+
+export { addPet, listaPets, removePet, alteraStatusPet, filtraPets, buscaPetsPorResponsavel }

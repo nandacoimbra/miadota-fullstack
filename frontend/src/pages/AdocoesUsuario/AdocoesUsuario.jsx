@@ -16,7 +16,7 @@ const AdocoesUsuario = () => {
     useEffect(() => {
         const fetchPetsDeInteresse = async () => {
             try {
-                const response = await axios.get(`${url}/user/list`, {
+                const response = await axios.get(`${url}/user/pets-interesse`, {
                     headers: {
                         Authorization: `Bearer ${token}` // Token de autenticação
                     }
@@ -38,7 +38,7 @@ const AdocoesUsuario = () => {
         <div className='user-adoptions-page'>
             <UserSidebar />
             <div className="user-adoptions-page-content">
-                {petsDeInteresse.length > 0 ? (
+                {petsDeInteresse ? (
                     petsDeInteresse.map(pet => (
                         <MinhasAdocoesCard key={pet._id} pet={pet} url={url}/>
                     ))

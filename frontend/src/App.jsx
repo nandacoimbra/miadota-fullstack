@@ -14,6 +14,7 @@ import PageDadosUsuario from './pages/PageDadosUsuario/PageDadosUsuario'
 import AdocoesUsuario from './pages/AdocoesUsuario/AdocoesUsuario'
 import CadastrosUsuario from './pages/CadastrosUsuario/CadastrosUsuario'
 import NovoPetUsuario from './pages/NovoPetUsuario/NovoPetUsuario'
+import InteressadosNoPet from './pages/InteressadosNoPet/InteressadosNoPet'
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/user/mypets' element={<CadastrosUsuario/>} />
           <Route path='/user/newpet' element={<NovoPetUsuario/>} />
           <Route path='/detalhes/:id' element={<DetalhesAnimal />} />
+          <Route path='/user/mypets/interested/:id' element={<InteressadosNoPet />} />
         </Routes>
       </div>
       <Footer />
