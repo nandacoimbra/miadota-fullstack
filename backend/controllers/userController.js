@@ -84,10 +84,10 @@ const cadastraUsuario = async (req, res) => {
 const adicionaPetDeInteresse = async (req, res) => {
 
     const { idPet } = req.body;
-    const { idUsuario } = req.user;
+    const { _id } = req.user;
 
     try {
-        const usuario = await userModel.findById(idUsuario);
+        const usuario = await userModel.findById(_id);
         // Verifica se o usuário foi encontrado
         if (!usuario) {
             return res.status(404).json({ success: false, message: "Usuário não encontrado" });
@@ -111,10 +111,10 @@ const adicionaPetDeInteresse = async (req, res) => {
 const listaPetsDeInteresse = async (req, res) => {
     try {
         //busca o id do usuário logado a partir do middleware de auth
-        const { idUsuario } = req.user;
+        const { _id } = req.user;
 
         // Encontra o usuário pelo ID e popula o campo petsTenhoInteresse com os detalhes dos pets
-        const usuario = await userModel.findById(idUsuario).populate('petsTenhoInteresse');
+        const usuario = await userModel.findById(_id).populate('petsTenhoInteresse');
 
         if (!usuario) {
             return res.status(404).json({ success: false, message: "Usuário não encontrado" });

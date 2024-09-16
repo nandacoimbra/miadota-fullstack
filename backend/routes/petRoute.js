@@ -2,6 +2,7 @@ import express from 'express'
 import { addPet, alteraStatusPet, filtraPets, listaPets, removePet } from '../controllers/petController.js'
 //para o sistema de armazenamento de imagem
 import multer from "multer"
+import authMiddleware from '../middleware/auth.js';
 
 const petRouter = express.Router();
 
@@ -17,7 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-petRouter.post("/add", upload.single("imagem"), addPet);
+petRouter.post("/add",authMiddleware, upload.single("imagem"), addPet);
 petRouter.get("/list", listaPets);
 petRouter.delete("/remove", removePet);
 petRouter.patch("/status/:id", alteraStatusPet);

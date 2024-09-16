@@ -43,7 +43,7 @@ const CadastroPet = ({data,imagem,setImagem,onChangeHandler,onSubmitHandler}) =>
                 </div>
                 <div className='add-pet-responsavel'>
                     <label htmlFor="">Responsável:</label>
-                    <input onChange={onChangeHandler} value={data.responsavel} type="text" name='responsavel' />
+                    <input onChange={onChangeHandler} type="text" name='responsavel' />
                 </div>
                 <div className='add-pet-description'>
                     <label htmlFor="">Descrição:</label>

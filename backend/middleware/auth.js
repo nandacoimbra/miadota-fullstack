@@ -17,7 +17,7 @@ const authMiddleware = async (req, res, next) => {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         
         // Armazena o ID do usuário no req.user para uso posterior
-        req.user = { idUsuario: decodedToken.id };
+        req.user = { _id: decodedToken.id };
         
         // Chama o próximo middleware ou rota
         next();

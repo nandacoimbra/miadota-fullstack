@@ -9,7 +9,7 @@ const petSchema = new mongoose.Schema({
     estado: { type: String, required: true },
     descricao: { type: String },
     imagem: { type: String, required: true },
-    responsavel: { type: String,required: true },
+    responsavel: { type: String,required: false },
     status: { type: Boolean, default: false }, // true = disponível para adoção
     adotado: { type: Boolean, default: false }, // true = adotado
 

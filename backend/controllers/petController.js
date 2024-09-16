@@ -1,4 +1,6 @@
 import petModel from '../models/petModel.js'
+import userModel from '../models/userModel.js';
+
 //file system já disponível no node
 import fs from 'fs'
 
@@ -15,16 +17,22 @@ const addPet = async (req, res) => {
         descricao: req.body.descricao,
         status: req.body.status,
         adotado: req.body.adotado,
-        responsavel: req.body.responsavel,
+        responsavel: req.user._id,
         imagem: nomeArquivoImagem
     })
 
     try {
-        await pet.save();
-        res.json({ success: true, message: "Pet cadastrado com sucesso!" });
+        const petSalvo = await pet.save();
+        await userModel.findByIdAndUpdate(req.user._id, {
+            $push: { petsCadastrados: petSalvo._id }
+        })
+
+        res.json({ success: true, message: "Pet cadastrado com sucesso!", data: petSalvo });
+
+
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error" })
+        res.status(500).json({ success: false, message: "Error" })
     }
 
 }

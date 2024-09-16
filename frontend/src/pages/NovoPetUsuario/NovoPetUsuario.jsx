@@ -24,7 +24,7 @@ const NovoPetUsuario = () => {
         descricao: "",
         status: false,
         adotado: false,
-        responsavel: "",
+       
     })
 
     const onChangeHandler = (event) => {
@@ -46,30 +46,42 @@ const NovoPetUsuario = () => {
         dadosForm.append("descricao", data.descricao);
         dadosForm.append("status", data.status);
         dadosForm.append("imagem", imagem);
-        dadosForm.append("responsavel", data.responsavel);
+        // dadosForm.append("responsavel", data.responsavel);
         dadosForm.append("adotado", data.adotado);
 
-        const response = await axios.post(`${url}/pet/add`, dadosForm);
+        try {
+            const token = localStorage.getItem("token");
+            const response = await axios.post(`${url}/pet/add`, dadosForm, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
 
-        if (response.data.success) {
-            setData({
-                nome: "",
-                especie: "gato",
-                sexo: "macho",
-                cidade: "",
-                estado: "",
-                descricao: "",
-                status: false,
-                adotado: false,
-                responsavel: ""
-
+                }
             });
-            setImagem(false);
-            toast.success(response.data.message);
 
-        } else {
-            toast.error(response.data.message);
+            if (response.data.success) {
+                setData({
+                    nome: "",
+                    especie: "gato",
+                    sexo: "macho",
+                    cidade: "",
+                    estado: "",
+                    descricao: "",
+                    status: false,
+                    adotado: false,
+
+                });
+                setImagem(false);
+                toast.success(response.data.message);
+                console.log(response.data);
+                
+
+            } else {
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+
         }
+
 
     }
 
@@ -77,7 +89,7 @@ const NovoPetUsuario = () => {
         <div className='user-new-pet-page'>
             <UserSidebar />
             <div className='user-new-pet-page-content'>
-                <CadastroPet imagem={imagem} setImagem={setImagem} data={data} setData={setData} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler}/>
+                <CadastroPet imagem={imagem} setImagem={setImagem} data={data} setData={setData} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} />
             </div>
         </div>
     )
