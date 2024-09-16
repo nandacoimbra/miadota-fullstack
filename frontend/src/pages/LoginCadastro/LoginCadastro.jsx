@@ -5,6 +5,7 @@ import CriarConta from '../../components/CriarConta/CriarConta'
 import { AppContext } from '../../context/AppContext'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 
 const LoginCadastro = () => {
@@ -48,6 +49,8 @@ const LoginCadastro = () => {
         localStorage.setItem("token", response.data.token);
         navigate(navAddress);
 
+      }else{
+        toast.error("Credenciais inválidas!")
       }
 
     } catch (error) {
