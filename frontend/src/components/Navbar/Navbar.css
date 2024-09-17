@@ -96,3 +96,12 @@
 .nav-profile-dropdown li span:hover{
     color: var(--btn-green);
 }
+
+@media (max-width: 400px){
+    
+    
+    .navbar-custom{
+        height: 10vh;
+    }
+    
+}
