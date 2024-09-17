@@ -8,7 +8,7 @@ userRouter.post("/register", cadastraUsuario);
 userRouter.post("/login", loginUsuario);
 userRouter.post("/interest", authMiddleware, adicionaPetDeInteresse);
 userRouter.get("/pets-interesse", authMiddleware, listaPetsDeInteresse);
-userRouter.get("/:id", authMiddleware, buscaUsuarioPorId);
+userRouter.get("/data", authMiddleware, buscaUsuarioPorId);
 userRouter.get("/interessados-pet/:idPet", obterUsuariosPorPetInteresse);
 
 export default userRouter;

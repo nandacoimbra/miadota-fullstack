@@ -84,13 +84,17 @@ const cadastraUsuario = async (req, res) => {
 
 const buscaUsuarioPorId = async (req, res) => {
     try {
-        const idUsuario = req.params.id;
-        //busca o usuario no banco
-        const usuario = await userModel.findById(idUsuario);
+        // O ID do usuário é obtido do middleware de autenticação
+        const idUsuario = req.user._id;
+
+        // Busca o usuário no banco
+        const usuario = await userModel.findById(idUsuario).select("nome email telefone cidade estado");
+
         // Verifica se o usuário existe
         if (!usuario) {
             return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
         }
+
         // Retorna o usuário encontrado
         return res.status(200).json({ success: true, data: usuario });
     } catch (error) {
