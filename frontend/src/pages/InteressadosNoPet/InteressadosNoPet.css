@@ -1,17 +1,19 @@
-.users-interested-in{
+.users-interested-in {
     display: flex;
     width: 100%;
 }
 
-.users-interested-in-pets{
+.users-interested-in-pets {
     width: 100%;
     padding: 2rem 3rem;
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
-.no-users-interested{
+.no-users-interested {
     display: flex;
     flex-direction: column;
 }

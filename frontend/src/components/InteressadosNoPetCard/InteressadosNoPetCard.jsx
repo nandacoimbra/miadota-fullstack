@@ -18,7 +18,7 @@ const InteressadosNoPetCard = ({usuario}) => {
         <span className='interested-card-item'>Data de solicitação: <span>01/08/24</span></span>
         <span className='interested-card-item'>Local: <span>{usuario.cidade}-{usuario.estado}</span></span>
         <span className='interested-card-item'>Contato: <span>{usuario.telefone}</span></span>
-        <span className='interested-card-item'>Status do pedido de adoção: <span>em análise</span></span>
+
         <div className="adoption-status-buttons">
             <button className='interested-button-accept'>Aceitar</button>
             <button className='interested-button-reject'>Recusar</button>

@@ -15,6 +15,7 @@ const LoginCadastro = () => {
   const [loginCadastro, setLoginCadastro] = useState("login");
   const [data, setData] = useState({
     nome: "",
+    telefone:"",
     email: "",
     senha: ""
   })

@@ -40,7 +40,7 @@ const loginUsuario = async (req, res) => {
 
 //cadastro de usuario
 const cadastraUsuario = async (req, res) => {
-    const { nome, email, senha } = req.body;
+    const { nome, telefone, email, senha } = req.body;
 
     try {
         //verifica se o email já foi cadastrado por outro usuario
@@ -64,6 +64,7 @@ const cadastraUsuario = async (req, res) => {
         //criando o novo usuario
         const novoUsuario = new userModel({
             nome: nome,
+            telefone: telefone,
             email: email,
             senha: hashedPassword
 
