@@ -26,8 +26,39 @@
 @media (max-width: 945px){
     .user-sidebar{
        width: 10%;
+   
     }
     .user-sidebar-link span{
         display: none;
     }
+}
+@media (max-width: 570px){
+    .user-sidebar{
+       min-width: 8%;
+       padding: .5rem .5rem;
+        
+    }
+  
+}
+@media (max-width: 560px){
+    .user-sidebar{
+       min-width: 8%;
+        padding: 0;
+    }
+
+    .user-sidebar-link{
+       justify-content: center;
+    }
+  
+}
+@media (max-width: 560px){
+    .user-sidebar{
+       min-width: 8%;
+        padding: 0;
+    }
+
+    .user-sidebar-link{
+       justify-content: center;
+    }
+  
 }

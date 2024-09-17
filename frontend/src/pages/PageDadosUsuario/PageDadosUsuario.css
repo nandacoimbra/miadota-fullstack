@@ -11,3 +11,12 @@
     justify-content: center;
 }
 
+@media (max-width: 670px){
+    
+    
+    .user-data-content{
+        padding: 0.5rem;
+    }
+    
+}
+
