@@ -1,48 +1,90 @@
+.pet-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+}
+
 .pet-details-container{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    width: 50%;
 }
 
 .pet-details-header-content{
-    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;   
+    padding: 0 1rem;
 }
 
-.pet-details-header h3{
+.pet-details-header h5, .pet-details-header h3{
     font-weight: bold;
 }
-
-.pet-details-description{
-    text-align: justify;
+.pet-details-header h5{
+    color: var(--btn-green);
 }
-.pet-details-img-container{
-    width: 50vw;
+
+
+
+.pet-details-content, .pet-details-info{
     display: flex;
-   justify-content: center;
-}
-.pet-details-img-container img{
-    width: 25rem;
-    height: auto;
-    border-radius: 3rem;
-    
-}
-
-.pet-details-info{
-    padding-left: 0;
+    flex-direction: column;
+    width: 100%;   
+    gap: 1rem;
+    padding: 0;
 }
 .pet-details-info li{
-    list-style: none;
-    margin-bottom: 1rem;
+  list-style: none;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 .pet-details-info li img{
-   width: 2rem;
-   height: 2rem;
+  width: 2rem;
+  height: auto;
+
+}
+.pet-details-img-container{
+    display: flex;
+    justify-content: center;
+}
+.pet-details-img{
+    max-width: 70%;
+    border-radius: 2rem;
+    object-fit: cover;
 }
 
-.pet-details-adopt-button{
+.pet-details-adopt-button {
     width: 10rem;
     height: 2.5rem;
     background-color: var(--btn-green);
     color: var(--white);
     border: 1px solid transparent;
+    margin-top: 2rem;
+}
+
+
+@media only screen and (max-width: 950px) {
+    .pet-details {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .pet-details-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .pet-details-adopt-button {
+        align-self: center;
+    }
+    .pet-details-header-content{  
+        padding: 0;
+    }
+    
 }
