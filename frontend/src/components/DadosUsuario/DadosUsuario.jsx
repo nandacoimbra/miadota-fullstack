@@ -1,33 +1,79 @@
 import React, { useState } from 'react'
 import './DadosUsuario.css'
+import axios from 'axios';
+import {toast} from 'react-toastify'
 
-const DadosUsuario = ({usuario}) => {
+const DadosUsuario = ({ usuario, url }) => {
 
-    const [name, setName] = useState("Fernanda Souza Coimbra Machado");
+    const [formData, setFormData] = useState({
+        nome: usuario.nome || '',
+        email: usuario.email || '',
+        telefone: usuario.telefone || '',
+        cidade: usuario.cidade || '',
+        estado: usuario.estado || '',
+    });
+
+    // Função para lidar com mudanças nos inputs
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    // Função para enviar dados atualizados ao backend
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                toast.error("Usuário não autenticado. Faça login.");
+                return;
+            }
+
+            // Envia os dados atualizados para o backend
+            const response = await axios.put(`${url}/user/data`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            if (response.data.success) {
+                toast.success("Dados atualizados com sucesso!");
+            } else {
+                toast.error(response.data.message);
+            }
+
+        } catch (error) {
+            console.error("Erro ao atualizar dados do usuário:", error);
+            toast.error("Erro ao atualizar dados.");
+        }
+    };
+
     return (
         <div className='user-data'>
             <h3 className=''>Meus dados</h3>
-            <form action="" className='user-data-form'>
+            <form onSubmit={handleSubmit} className='user-data-form'>
                 <div className="user-name">
                     <label htmlFor="">Nome Completo:</label>
-                    <input type="text" name="" id="" placeholder={usuario.nome} />
+                    <input type="text" name="nome" id="" placeholder={usuario.nome}  value={formData.nome} onChange={handleInputChange}/>
                 </div>
                 <div className="user-email">
                     <label htmlFor="">E-mail:</label>
-                    <input type="email" name="" id="" placeholder={usuario.email}/>
+                    <input type="email" name="email" id="" placeholder={usuario.email} value={formData.email} onChange={handleInputChange}/>
                 </div>
                 <div className="user-phone">
                     <label htmlFor="">Telefone:</label>
-                    <input type="tel" name="" id="" placeholder={usuario.telefone}/>
+                    <input type="tel" name="telefone" id="" placeholder={usuario.telefone}  value={formData.telefone} onChange={handleInputChange}/>
                 </div>
                 <div className="user-city-state">
                     <div className="user-city">
                         <label htmlFor="">Cidade:</label>
-                        <input type="text" name="" id="" placeholder={usuario.cidade}/>
+                        <input type="text" name="cidade" id="" placeholder={usuario.cidade} value={formData.cidade} onChange={handleInputChange}/>
                     </div>
                     <div className="user-state">
                         <label htmlFor="">Estado:</label>
-                        <input type="text" name="" id="" placeholder={usuario.estado}/>
+                        <input type="text" name="estado" id="" placeholder={usuario.estado} value={formData.estado} onChange={handleInputChange}/>
                     </div>
                 </div>
                 {/* <div className="user-address">
@@ -40,7 +86,7 @@ const DadosUsuario = ({usuario}) => {
                         <input type="number" name="" id="" />
                     </div>
                 </div> */}
-                <button className='edit-user-data-button'>Editar Dados</button>
+                <button className='edit-user-data-button' type="submit">Salvar Alterações</button>
             </form>
         </div>
     )

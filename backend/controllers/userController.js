@@ -103,6 +103,28 @@ const buscaUsuarioPorId = async (req, res) => {
     }
 }
 
+// Atualiza os dados do usuário
+const atualizaUsuario = async (req, res) => {
+    try {
+        const idUsuario = req.user._id; // ID do usuário autenticado no token
+        const novosDados = req.body; // Dados que serão atualizados enviados pelo frontend
+
+        // Atualiza o usuário com os novos dados
+        const usuarioAtualizado = await userModel.findByIdAndUpdate(idUsuario, novosDados, { new: true }).select("nome email telefone cidade estado");
+
+        // Verifica se o usuário foi encontrado
+        if (!usuarioAtualizado) {
+            return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+        }
+
+        // Retorna os dados atualizados do usuário
+        return res.status(200).json({ success: true, data: usuarioAtualizado });
+    } catch (error) {
+        console.error("Erro ao atualizar dados do usuário:", error);
+        return res.status(500).json({ success: false, message: 'Erro no servidor' });
+    }
+};
+
 const adicionaPetDeInteresse = async (req, res) => {
 
     const { idPet } = req.body;
@@ -183,4 +205,4 @@ const obterUsuariosPorPetInteresse = async (req,res) => {
     }
 };
 
-export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse, listaPetsDeInteresse, buscaUsuarioPorId, obterUsuariosPorPetInteresse }
+export { loginUsuario, cadastraUsuario, adicionaPetDeInteresse, listaPetsDeInteresse, buscaUsuarioPorId, obterUsuariosPorPetInteresse, atualizaUsuario }

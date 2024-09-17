@@ -58,7 +58,7 @@ const PageDadosUsuario = () => {
         <div className='user-data-page'>
             <UserSidebar />
             <div className="user-data-content">
-                <DadosUsuario key={usuario._id} usuario={usuario} />
+                <DadosUsuario key={usuario._id} usuario={usuario} url={url}/>
             </div>
         </div>
     )
