@@ -38,7 +38,7 @@
     margin: 0;
 }
 
-.navlinks li{
+.navlinks {
     list-style: none;
     cursor: pointer;
 }
@@ -57,4 +57,10 @@ hr {
 
 .copyright {
     margin: 0 0 .5rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .navlinks li{
+        display: none;
+    }
 }

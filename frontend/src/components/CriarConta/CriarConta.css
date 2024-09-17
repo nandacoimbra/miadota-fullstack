@@ -1,6 +1,6 @@
 .create-account-container {
     width: 25rem;
-    height: 22rem;
+    height: 25rem;
     background-color: var(--footer-gray);
     margin: 2rem;
     padding: 2rem 2rem 1rem 2rem;
@@ -44,4 +44,23 @@
     text-decoration: none;
     color: var(--btn-green);
 
+}
+
+@media only screen and (max-width: 480px) {
+    .create-account-container {
+        width: 20rem;
+        height: 25rem;
+        margin-top: 3rem;
+       
+    }
+    
+}
+@media only screen and (max-width: 350px) {
+    .create-account-container {
+        width: 18rem;
+        height: 27rem;
+        margin-top: 4rem;
+       
+    }
+    
 }

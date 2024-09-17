@@ -7,11 +7,15 @@
 }
 
 .filtra-especies-container h1{
-    font-weight: 500;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--darker-gray);
 }
 
 .filtra-especies-text {
     max-width: 100%;
+    color: var(--darker-gray);
+    margin-bottom: .2rem;
 }
 
 .lista-especies img{
@@ -23,6 +27,7 @@
 .especie p{
    color: var(--darker-gray);
    font-size: 1rem;
+   margin: 0;
 }
 
 .lista-especies{
