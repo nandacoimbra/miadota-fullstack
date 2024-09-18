@@ -15,7 +15,8 @@ const NovosCadastros = () => {
 
   //chamada lista pet da api
   const fetchList = async () => {
-    const response = await axios.get(`${url}/pet/list`);
+    const params = new URLSearchParams({status:'CADASTRADO'});
+    const response = await axios.get(`${url}/pet/filter`, {params});
     console.log(response.data);
     if (response.data.success) {
       setPetList(response.data.data);
@@ -28,7 +29,7 @@ const NovosCadastros = () => {
   const alteraStatus = async (petId, novoStatus) => {
     console.log(novoStatus, petId)
     try {
-      const response = await axios.patch(`${url}/pet/status/${petId}`, { status: novoStatus });
+      const response = await axios.patch(`${url}/pet/${petId}`,{status:'APROVADO',aprovado:true});
 
       if (response.data.success) {
         toast.success("Pet movido para a aba disponíveis")
@@ -57,8 +58,8 @@ const NovosCadastros = () => {
     <h2 className='page-title'>Pets para Aprovação</h2>
         <div className='new-requests'>
       {
-        petList.filter(pet => pet.status === false).map((pet) => {
-          return <PetCardAprovacao alteraStatus={alteraStatus} key={pet._id} id={pet._id} imagem={`${url}/images/` + pet.imagem} nome={pet.nome} especie={pet.especie} cidade={pet.cidade} estado={pet.estado} descricao={pet.descricao} status={pet.status} responsavel={pet.responsavel} />
+        petList.map((pet) => {
+          return <PetCardAprovacao alteraStatus={alteraStatus} key={pet._id} pet={pet} imagem={`${url}/images/` + pet.imagem} />
         })
       }
     </div>

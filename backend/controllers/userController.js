@@ -88,7 +88,7 @@ const buscaUsuarioPorId = async (req, res) => {
         const idUsuario = req.user._id;
 
         // Busca o usuário no banco
-        const usuario = await userModel.findById(idUsuario).select("nome email telefone cidade estado");
+        const usuario = await userModel.findById(idUsuario).select("_id nome email telefone cidade estado");
 
         // Verifica se o usuário existe
         if (!usuario) {

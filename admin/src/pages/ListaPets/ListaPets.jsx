@@ -15,7 +15,8 @@ const ListaPets = () => {
 
   //chamada da api
   const fetchList = async () => {
-    const response = await axios.get(`${url}/pet/list`);
+    const params = new URLSearchParams({status:'APROVADO'});
+    const response = await axios.get(`${url}/pet/filter`,{params});
     console.log(response.data);
     if (response.data.success) {
       setPetList(response.data.data);
@@ -36,8 +37,8 @@ const ListaPets = () => {
       <div className="available-pets">
 
         {
-          petList.filter(pet => pet.status === true).map((pet) => {
-            return <PetCardDisponivel key={pet._id} imagem={`${url}/images/` + pet.imagem} nome={pet.nome} especie={pet.especie} responsavel={pet.responsavel} />
+          petList.map((pet) => {
+            return <PetCardDisponivel key={pet._id} imagem={`${url}/images/` + pet.imagem} pet={pet} />
           })
         }
       </div>

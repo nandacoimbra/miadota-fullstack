@@ -9,13 +9,19 @@ const petSchema = new mongoose.Schema({
     estado: { type: String, required: true },
     descricao: { type: String },
     imagem: { type: String, required: true },
-    responsavel: { 
-        type: mongoose.Schema.Types.ObjectId, 
+    responsavel: {
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'user',  // Referencia o modelo de usuário
-        required: true 
+        required: true
     },
-    status: { type: Boolean, default: false }, // true = disponível para adoção
+    aprovado: { type: Boolean, default: false }, // true = disponível para adoção
     adotado: { type: Boolean, default: false }, // true = adotado
+    status: { type: String, default: 'CADASTRADO' },
+    observacaoStatus: { type: String, default: '' },
+    adotante: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    }
 
 });
 

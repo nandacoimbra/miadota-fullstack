@@ -1,7 +1,8 @@
 import React from 'react'
 import './PetCardDisponivel.css'
 
-const PetCardDisponivel = ({nome,imagem,especie,responsavel}) => {
+const PetCardDisponivel = ({imagem,pet}) => {
+    const {nome,especie,responsavel,status} = pet;
     return (
         <div className="available-pet">
             <div className="available-pet-img-container" >
@@ -14,12 +15,12 @@ const PetCardDisponivel = ({nome,imagem,especie,responsavel}) => {
 
                 </div>
                 <div className="available-pet-tutor">
-                    <span className='available-pet-label'>Responsável: <span>{responsavel}</span></span>
+                    <span className='available-pet-label'>Responsável: <span>{responsavel.nome}</span></span>
 
                 </div>
 
                 <div className="available-pet-status">
-                    <span className='available-pet-label'>Interessados: <span>5</span></span>
+                    <span className='available-pet-label'>Status: <span>{status}</span></span>
                 </div>
             </div>
 

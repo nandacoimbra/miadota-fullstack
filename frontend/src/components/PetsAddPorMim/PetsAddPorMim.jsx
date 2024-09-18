@@ -35,7 +35,7 @@ const PetsAddPorMim = ({pet,url}) => {
                     <span className='my-pet-label'>Pessoas interessadas: <span className='interested-list'>5</span></span>
                 </div> */}
                 <div className="">
-                    <span>{pet.status && 'Aprovado'}</span>
+                    <span>{pet.status}</span>
                 </div>
                 <button className='list-interested-people' onClick={manipulaIdDoPet}>Listar interessados</button>
             </div>

@@ -21,9 +21,7 @@ const NovoPetUsuario = () => {
         sexo: "macho",
         cidade: "",
         estado: "",
-        descricao: "",
-        status: false,
-        adotado: false,
+        descricao: ""
        
     })
 
@@ -44,10 +42,7 @@ const NovoPetUsuario = () => {
         dadosForm.append("cidade", data.cidade);
         dadosForm.append("estado", data.estado);
         dadosForm.append("descricao", data.descricao);
-        dadosForm.append("status", data.status);
         dadosForm.append("imagem", imagem);
-        // dadosForm.append("responsavel", data.responsavel);
-        dadosForm.append("adotado", data.adotado);
 
         try {
             const token = localStorage.getItem("token");
@@ -65,10 +60,7 @@ const NovoPetUsuario = () => {
                     sexo: "macho",
                     cidade: "",
                     estado: "",
-                    descricao: "",
-                    status: false,
-                    adotado: false,
-
+                    descricao: ""
                 });
                 setImagem(false);
                 toast.success(response.data.message);

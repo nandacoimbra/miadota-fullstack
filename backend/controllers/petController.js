@@ -15,8 +15,6 @@ const addPet = async (req, res) => {
         cidade: req.body.cidade,
         estado: req.body.estado,
         descricao: req.body.descricao,
-        status: req.body.status,
-        adotado: req.body.adotado,
         responsavel: req.user._id,
         imagem: nomeArquivoImagem
     })
@@ -66,12 +64,12 @@ const removePet = async (req, res) => {
 }
 
 //altera o status do pet para aprovado=true, disponivel para adocao
-const alteraStatusPet = async (req, res) => {
+const alteraPet = async (req, res) => {
     try {
         const petId = req.params.id;
         const petStatusAtualizado = await petModel.findByIdAndUpdate(
             petId, //id do pet
-            { status: true }, //muda o status para true
+            req.body, //muda o status para true
             { new: true } //retorna o documento atualizado
         )
 
@@ -93,13 +91,11 @@ const filtraPets = async (req, res) => {
     try {
 
         //parametros extraidos das query (se houver)
-        const { status, adotado, especie, cidade, estado, sexo } = req.query;
+        const { status, adotado, especie, cidade, estado, sexo, aprovado } = req.query;
         let filtro = {};
 
         if (status) {
-            // Converte o status para booleano
-            const statusBooleano = status === 'true';
-            filtro.status = statusBooleano;
+            filtro.status = status;
         }
 
         if (especie) {
@@ -113,8 +109,11 @@ const filtraPets = async (req, res) => {
         if (sexo) {
             filtro.sexo = sexo; // Filtra por sexo 
         }
+        if (aprovado) {
+            filtro.aprovado = aprovado; // Filtra por aprovado 
+        }
 
-        const pets = await petModel.find(filtro);
+        const pets = await petModel.find(filtro).populate("responsavel");
 
         if (!pets || pets.length === 0) {
             return res.status(404).json({ success: false, message: "Nenhum pet encontrado" });
@@ -151,4 +150,4 @@ const buscaPetsPorResponsavel = async (req, res) => {
     }
 }
 
-export { addPet, listaPets, removePet, alteraStatusPet, filtraPets, buscaPetsPorResponsavel }
+export { addPet, listaPets, removePet, alteraPet, filtraPets, buscaPetsPorResponsavel }

@@ -29,9 +29,8 @@ const CatalogoDePets = ({ especie }) => {
     useEffect(() => {
        
         const filtros = {
-            status: 'true',
-            especie: especie || ""
-            
+            status: 'APROVADO',
+            especie: especie || "", 
         };
         console.log(especie);
         fetchPetsFiltrados(filtros);
@@ -40,11 +39,8 @@ const CatalogoDePets = ({ especie }) => {
         <div className='catalogo-de-pets' id='catalogo-de-pets'>
             <div className="pets-para-adocao">
                 {
-                    petsFiltrados.map((card) => {
-
-
-                        return <PetCardHome key={card._id} id={card._id} imagem={card.imagem} nome={card.nome} sexo={card.sexo} cidade={card.cidade} estado={card.estado} descricao={card.descricao} status={card.status} especie={card.especie} url={url} />
-
+                    petsFiltrados.map((pet) => {
+                        return <PetCardHome key={pet._id} pet={pet} url={url} />
                     })
 
                 }
