@@ -1,9 +1,11 @@
 import React from 'react'
+import PetCardAdotado from '../../components/PetCardAdotado/PetCardAdotado'
+
 
 const Adotados = () => {
   return (
-    <div>
-      
+    <div className='adopted-pets'>
+     <PetCardAdotado/>
     </div>
   )
 }

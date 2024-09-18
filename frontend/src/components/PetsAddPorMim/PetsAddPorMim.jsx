@@ -31,8 +31,11 @@ const PetsAddPorMim = ({pet,url}) => {
                     <span className='my-pet-label'>Local: <span>{pet.cidade}-{pet.estado}</span></span>
 
                 </div>
-                <div className="my-pet-interested-list">
+                {/* <div className="my-pet-interested-list">
                     <span className='my-pet-label'>Pessoas interessadas: <span className='interested-list'>5</span></span>
+                </div> */}
+                <div className="">
+                    <span>{pet.status && 'Aprovado'}</span>
                 </div>
                 <button className='list-interested-people' onClick={manipulaIdDoPet}>Listar interessados</button>
             </div>
