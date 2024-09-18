@@ -4,8 +4,6 @@ import { useState } from 'react'
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
-import { assets } from '../../../../frontend/src/assets/assets';
-import PetCardAprovacao from '../../components/PetCardAprovacao/PetCardAprovacao';
 import PetCardDisponivel from '../../components/PetCardDisponivel/PetCardDisponivel';
 
 
@@ -33,14 +31,17 @@ const ListaPets = () => {
 
   return (
 
-    <div className="available-pets">
+    <>
+      <h2 className='page-title'>Disponíveis para Adoção</h2>
+      <div className="available-pets">
 
-      {
-        petList.filter(pet=>pet.status===true).map((pet)=>{
-          return <PetCardDisponivel key={pet._id} imagem={`${url}/images/`+pet.imagem} nome={pet.nome} especie={pet.especie} responsavel={pet.responsavel}/>
-        })
-      }
-    </div>
+        {
+          petList.filter(pet => pet.status === true).map((pet) => {
+            return <PetCardDisponivel key={pet._id} imagem={`${url}/images/` + pet.imagem} nome={pet.nome} especie={pet.especie} responsavel={pet.responsavel} />
+          })
+        }
+      </div>
+    </>
   )
 }
 

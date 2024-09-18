@@ -5,3 +5,15 @@
     align-items: center;
     gap: 1rem;
 }
+
+
+@media (max-width: 1120px){
+    
+
+    .available-pets {
+        padding: 0;
+    }
+
+    
+    
+}

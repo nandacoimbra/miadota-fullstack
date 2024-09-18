@@ -35,7 +35,7 @@
 }
 
 .available-pet-data h5 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
 }
@@ -76,6 +76,92 @@
 
 .available-pet-short {
     display: none;
+}
+
+
+
+@media (max-width: 1120px){
+    
+    
+    .available-pet{
+        width: 90%;
+        height: auto;
+    }
+    
+}
+@media (max-width: 750px){
+    
+    
+    .user-wanted-pet{
+        width: 90%;
+        height: auto;
+    }
+    
+}
+@media (max-width: 600px){
+    
+    
+    .user-wanted-pet{
+        width: 100%;
+        height: auto;
+    }
+
+    .user-pet-img-container img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 2rem 0 0 2rem;
+    }
+    
+}
+
+@media (max-width: 500px){
+    
+    .user-wanted-pet{
+       font-size: .8rem;
+    }
+    .user-pet-data{
+        padding: .5rem;
+    }
+
+    .user-pet-img-container{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 2rem 0 0 2rem;
+    }
+
+    
+}
+@media (max-width: 450px){
+    
+
+    .user-pet-img-container {
+        width: 70%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border-radius: 2rem 0 0 2rem;
+    }
+
+    .user-pet-img-container img{
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+}
+@media (max-width: 400px){
+    
+
+      
+    .user-wanted-pet{
+        width: 70%;
+        height: auto;
+     }
+    
 }
 
 
