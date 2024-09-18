@@ -11,3 +11,11 @@
     justify-content: center;
 }
 
+@media (max-width: 700px){
+    .user-new-pet-page-content{
+      padding: 1rem;
+       
+    }
+    
+}
+

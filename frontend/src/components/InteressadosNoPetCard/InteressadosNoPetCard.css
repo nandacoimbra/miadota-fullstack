@@ -63,3 +63,32 @@
 .interested-button-accept:hover, .interested-button-reject:hover{
     background-color: var(--white);
 }
+
+@media (max-width: 750px){
+    
+    
+    .interested-card-body{
+        width: 90%;
+        height: auto;
+    }
+    
+}
+
+
+@media (max-width: 550px){
+    
+    .interested-card-contact-icons li{
+        width: 2rem;
+    }
+  
+
+    
+}
+@media (max-width: 450px){
+    
+
+    .interested-card-contact-icons li{
+        display: none;
+    }
+    
+}

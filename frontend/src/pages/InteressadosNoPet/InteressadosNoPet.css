@@ -1,6 +1,14 @@
 .users-interested-in {
     display: flex;
     width: 100%;
+    min-height: 70vh;
+}
+
+.users-interested{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content:center ;
 }
 
 .users-interested-in-pets {
@@ -16,4 +24,13 @@
 .no-users-interested {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 750px){
+    
+    
+    .users-interested-in-pets{
+        padding: 1rem;
+    }
+    
 }

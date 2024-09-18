@@ -76,3 +76,52 @@
     cursor: pointer;
 
 }
+
+@media (max-width: 650px){
+    .add-pet-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+        background-color: var(--footer-gray);
+        
+    }
+    
+}
+@media (max-width: 600px){
+    .add-pet-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+        background-color: var(--footer-gray);
+        
+    }
+
+    .add-pet-city-state{
+        width: 100%;
+        display: flex; 
+        flex-direction: column;
+        
+    }
+    .pet-city, .pet-state{
+        width: 100%;
+    }
+    .uploaded-image{
+        width: 30%;
+        height: auto;
+    
+    }
+    
+    
+}
+
+@media (max-width: 650px){
+    .input-image {
+      display: none;
+        
+    }
+    
+}

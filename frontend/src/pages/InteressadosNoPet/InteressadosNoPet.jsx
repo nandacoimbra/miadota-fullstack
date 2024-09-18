@@ -43,19 +43,23 @@ const InteressadosNoPet = () => {
         <div className='users-interested-in'>
             <UserSidebar />
             <div className="users-interested-in-pets">
-                {usuariosInteressados.length > 0 ? (
-                    usuariosInteressados.map(usuario => (
-                        <InteressadosNoPetCard key={usuario._id} usuario={usuario} />
-                    ))
-                ) : (
-                    <div className="no-users-interested">
-                        <p>Nenhum usuário interessado nesse pet.</p>
-                        <button onClick={() => { navigate("/user/mypets") }}>Voltar</button>
-                   </div>
-                    
-                    
-                )}
-        </div>
+                <h3 className='page-title'>Interessados no Pet</h3>
+                <div className="users-interested">
+                    {usuariosInteressados.length > 0 ? (
+                        usuariosInteressados.map(usuario => (
+                            <InteressadosNoPetCard key={usuario._id} usuario={usuario} />
+                        ))
+                    ) : (
+                        <div className="no-users-interested">
+                            <p>Nenhum usuário interessado nesse pet.</p>
+                            <button onClick={() => { navigate("/user/mypets") }}>Voltar</button>
+                        </div>
+
+
+                    )}
+                </div>
+
+            </div>
         </div >
     )
 }

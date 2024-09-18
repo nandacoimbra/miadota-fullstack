@@ -54,7 +54,7 @@ const CadastroPet = ({data,imagem,setImagem,onChangeHandler,onSubmitHandler}) =>
                     <label htmlFor="image" className='upload-image'>
                         <img src={imagem ? URL.createObjectURL(imagem) : assets.image_upload} alt="" className='uploaded-image' />
                     </label>
-                    <input onChange={(e) => setImagem(e.target.files[0])} type="file" required name="imagem" id='image' />
+                    <input className='input-image' onChange={(e) => setImagem(e.target.files[0])} type="file" required name="imagem" id='image' />
                 </div>
                 <button type='submit' className='add-pet-button'>Cadastrar</button>
             </form>
