@@ -36,16 +36,19 @@ const CadastrosUsuario = () => {
         <div className='user-added-page'>
             <UserSidebar />
             <div className='user-added-page-content'>
-                <h2>Meus Pets</h2>
-                {petsCadastrados.length > 0 ? (
-                    <>
-                        {petsCadastrados.map(pet => (
-                            <PetsAddPorMim key={pet._id} pet={pet} url={url}/>
-                        ))}
-                    </>
-                ) : (
-                    <p>Você ainda não tem nenhum pet cadastrado.</p>
-                )}
+                <h3 className='page-title'>Meus Pets</h3>
+                <div className="added-pets">
+                    {petsCadastrados.length > 0 ? (
+                        <>
+                            {petsCadastrados.map(pet => (
+                                <PetsAddPorMim key={pet._id} pet={pet} url={url} />
+                            ))}
+                        </>
+                    ) : (
+                        <p>Você ainda não tem nenhum pet cadastrado.</p>
+                    )}
+                </div>
+
             </div>
         </div>
     )

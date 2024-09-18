@@ -52,7 +52,7 @@ const DadosUsuario = ({ usuario, url }) => {
 
     return (
         <div className='user-data'>
-            <h3 className=''>Meus dados</h3>
+            <h3 className='page-title'>Meus dados</h3>
             <form onSubmit={handleSubmit} className='user-data-form'>
                 <div className="user-name">
                     <label htmlFor="">Nome Completo:</label>

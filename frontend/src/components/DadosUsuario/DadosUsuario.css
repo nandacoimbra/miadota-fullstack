@@ -79,14 +79,13 @@
     }
 
     .user-data-form{
-        width: 95%;
+        width: 80%;
         height: auto;
         
     }
-
-    .edit-user-data-button{
-        width: 100%;
-        
+    
+    .user-data input{
+        height: 2rem;
     }
     
 }

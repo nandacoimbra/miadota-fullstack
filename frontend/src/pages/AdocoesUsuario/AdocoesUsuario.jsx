@@ -32,19 +32,24 @@ const AdocoesUsuario = () => {
             }
         }
         fetchPetsDeInteresse();
-    }, [token,url])
+    }, [token, url])
 
     return (
         <div className='user-adoptions-page'>
             <UserSidebar />
             <div className="user-adoptions-page-content">
-                {petsDeInteresse ? (
-                    petsDeInteresse.map(pet => (
-                        <MinhasAdocoesCard key={pet._id} pet={pet} url={url}/>
-                    ))
-                ) : (
-                    <p>Você ainda não tem nenhum pet de interesse.</p>
-                )}
+
+                <h3 className='page-title'>Quero Adotar</h3>
+                <div className="user-adoptios">
+                    {petsDeInteresse ? (
+                        petsDeInteresse.map(pet => (
+                            <MinhasAdocoesCard key={pet._id} pet={pet} url={url} />
+                        ))
+                    ) : (
+                        <p>Você ainda não tem nenhum pet de interesse.</p>
+                    )}
+                </div>
+
 
             </div>
         </div>
