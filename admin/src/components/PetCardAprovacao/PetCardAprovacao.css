@@ -10,7 +10,8 @@
         0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
-.new-pet hr{
+
+.new-pet hr {
     width: 100%;
     border: 1px solid var(--header-green);
     /* border: 1px solid rgb(190, 190, 190); */
@@ -46,7 +47,7 @@
     font-size: 1.4rem;
     font-weight: bold;
     text-align: left;
-    
+
 }
 
 .new-pet-label {
@@ -84,7 +85,7 @@
 
 }
 
-.new-pet-status button{
+.new-pet-status button {
     width: 6rem;
     border: 1px solid transparent;
     padding: .3rem;
@@ -93,12 +94,14 @@
     font-weight: bold;
     margin-top: .3rem;
 }
-.approve-button:hover{
+
+.approve-button:hover {
     border: 1px solid var(--header-green);
     background-color: var(--header-green);
     cursor: pointer;
 }
-.disapprove-button:hover{
+
+.disapprove-button:hover {
     border: 1px solid var(--orange-pantone);
     background-color: var(--orange-pantone);
     cursor: pointer;
@@ -121,4 +124,44 @@
 .trash-icon:hover {
     cursor: pointer;
     color: var(--btn-green);
+}
+
+@media (max-width: 1120px) {
+
+
+    .new-pet {
+        width: 90%;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+
+    .new-pet-img-container {
+        width: 50%;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .new-pet {
+        width: 80%;
+        flex-direction: column;
+    }
+
+    .new-pet-img-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .arrow-icon,
+    .trash-icon {
+       width: 2rem;
+       height: auto;
+    }
+
 }

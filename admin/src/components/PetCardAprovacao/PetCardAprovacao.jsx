@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './PetCardAprovacao.css'
-import { assets } from '../../../../frontend/src/assets/assets';
 import { CaretDown, CaretUp, Trash } from "phosphor-react"
 
 

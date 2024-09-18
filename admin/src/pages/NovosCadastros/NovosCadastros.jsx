@@ -53,13 +53,17 @@ const NovosCadastros = () => {
   }, [])
   return (
 
-    <div className='new-requests'>
+    <>
+    <h2 className='page-title'>Pets para Aprovação</h2>
+        <div className='new-requests'>
       {
         petList.filter(pet => pet.status === false).map((pet) => {
           return <PetCardAprovacao alteraStatus={alteraStatus} key={pet._id} id={pet._id} imagem={`${url}/images/` + pet.imagem} nome={pet.nome} especie={pet.especie} cidade={pet.cidade} estado={pet.estado} descricao={pet.descricao} status={pet.status} responsavel={pet.responsavel} />
         })
       }
     </div>
+    </>
+
   )
 }
 
