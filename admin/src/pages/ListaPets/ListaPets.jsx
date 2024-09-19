@@ -15,7 +15,9 @@ const ListaPets = () => {
 
   //chamada da api
   const fetchList = async () => {
-    const params = new URLSearchParams({status:'APROVADO'});
+    const params = new URLSearchParams();
+    params.append('status', 'APROVADO');
+    params.append('status', 'EM_ADOCAO');
     const response = await axios.get(`${url}/pet/filter`,{params});
     console.log(response.data);
     if (response.data.success) {

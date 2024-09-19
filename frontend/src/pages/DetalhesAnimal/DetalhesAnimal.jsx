@@ -22,7 +22,7 @@ const DetalhesAnimal = () => {
       try {
         //monta os parametros de consulta com base nos filtros passado, nesse caso, status===true, pet para aprovado para adoção
         const params = new URLSearchParams({ _id: id });
-        const response = await axios.get(`${url}/pet/filter/`, { params });
+        const response = await axios.get(`${url}/pet/filter`,{params});
         if (response.data.success) {
           setPet(response.data.data[0]);
         }

@@ -3,16 +3,16 @@ import { assets } from '../../../../frontend/src/assets/assets'
 import "./PetCardAdotado.css"
 
 
-const PetCardAdotado = () => {
+const PetCardAdotado = ({pet,imagem}) => {
     return (
         <div className="adopted-pet">
             <div className="adopted-pet-img-container" >
-                <img src={assets.nick} alt="" />
+                <img src={imagem} alt="" />
             </div>
             <div className="adopted-pet-data">
                 <h5>Nick</h5>
                 <div className="adopted-pet-specie">
-                    <span className='adopted-pet-label'>Espécie: <span>Gato</span></span>
+                    <span className='adopted-pet-label'>Espécie: <span>{pet.especie}</span></span>
 
                 </div>
                 <div className="adopted-pet-tutor">

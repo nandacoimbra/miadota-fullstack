@@ -1,5 +1,5 @@
 import express from 'express'
-import { addPet, alteraPet, buscaPetsPorResponsavel, filtraPets, listaPets, removePet } from '../controllers/petController.js'
+import { addPet, alteraPet, buscaPetsPorResponsavel, filtraPets, listaPets, removePet, buscaPet } from '../controllers/petController.js'
 //para o sistema de armazenamento de imagem
 import multer from "multer"
 import authMiddleware from '../middleware/auth.js';
@@ -24,6 +24,7 @@ petRouter.delete("/remove", removePet);
 petRouter.patch("/:id", alteraPet);
 petRouter.get("/filter", filtraPets);
 petRouter.get("/meus-pets", authMiddleware, buscaPetsPorResponsavel);
+petRouter.get("/:id", buscaPet);
 
 
 export default petRouter;

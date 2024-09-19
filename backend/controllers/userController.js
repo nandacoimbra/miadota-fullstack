@@ -190,8 +190,7 @@ const obterUsuariosPorPetInteresse = async (req,res) => {
         // Busca direta no modelo de usuários que têm interesse no pet especificado
         const usuarios = await userModel.find({
             petsTenhoInteresse: idPet
-        }).select('nome email cidade estado telefone');;
-
+        }).select('nome email cidade estado telefone');
         res.json({
             success: true,
             data:usuarios

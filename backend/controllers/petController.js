@@ -77,12 +77,30 @@ const alteraPet = async (req, res) => {
             return res.json({ message: "Pet não encontrado" })
         }
 
-        res.json({ success: true, message: "Status do pet alterado com sucesso" })
+        res.json({ success: true, data: petStatusAtualizado, message: "Status do pet alterado com sucesso" })
 
 
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Erro ao alterar status do pet" })
+    }
+}
+const buscaPet = async (req, res) => {
+    try {
+        const petId = req.params.id;
+        const pet = await petModel.findById(petId);
+
+        if (!pet) {
+            return res.status(404).json({ success: false, message: "Nenhum pet encontrado" });
+
+        }
+
+        res.json({ success: true, data: pet })
+
+
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Erro ao recuperar pet" })
     }
 }
 
@@ -91,7 +109,7 @@ const filtraPets = async (req, res) => {
     try {
 
         //parametros extraidos das query (se houver)
-        const { status, adotado, especie, cidade, estado, sexo, aprovado } = req.query;
+        const { status, adotado, especie, cidade, estado, sexo, aprovado, _id } = req.query;
         let filtro = {};
 
         if (status) {
@@ -111,6 +129,9 @@ const filtraPets = async (req, res) => {
         }
         if (aprovado) {
             filtro.aprovado = aprovado; // Filtra por aprovado 
+        }
+        if (_id) {
+            filtro._id = _id; // Filtra por aprovado 
         }
 
         const pets = await petModel.find(filtro).populate("responsavel");
@@ -132,7 +153,7 @@ const filtraPets = async (req, res) => {
 }
 
 const buscaPetsPorResponsavel = async (req, res) => {
-    const {_id} = req.user;
+    const { _id } = req.user;
 
     try {
         // Busca direta no modelo de pets com base no ID do responsável
@@ -150,4 +171,4 @@ const buscaPetsPorResponsavel = async (req, res) => {
     }
 }
 
-export { addPet, listaPets, removePet, alteraPet, filtraPets, buscaPetsPorResponsavel }
+export { addPet, listaPets, buscaPet, removePet, alteraPet, filtraPets, buscaPetsPorResponsavel }

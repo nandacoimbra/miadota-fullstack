@@ -9,7 +9,7 @@ const FilterSpecies = ({ especie, setEspecie }) => {
         //seleciona cães ou gatos na lista geral de pets para adoção
         <div className='filtra-especies-container' id='filtra-especies-container'>
             <h1>Pets disponíveis para adoção</h1>
-            <p className='filtra-especies-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis blanditiis itaque dignissimos quod error adipisci eum, cupiditate ab quas voluptatum, sequi, repellat facilis temporibus excepturi veritatis quibusdam perferendis voluptas iure?</p>
+            <p className='filtra-especies-text'>A adoção é um ato de amor que transforma a vida de animais abandonados e oferece a eles uma segunda chance de serem felizes em um novo lar. Navegue por nossa lista de pets disponíveis, conheça suas histórias e prepare-se para dar muito carinho a quem mais precisa.</p>
             <div className="lista-especies">
                 {listaDeEspecies.map((animal) => {
                     return (

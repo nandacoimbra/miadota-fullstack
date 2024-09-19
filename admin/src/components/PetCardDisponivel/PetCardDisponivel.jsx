@@ -1,12 +1,12 @@
 import React from 'react'
 import './PetCardDisponivel.css'
 
-const PetCardDisponivel = ({imagem,pet}) => {
-    const {nome,especie,responsavel,status} = pet;
+const PetCardDisponivel = ({ imagem, pet }) => {
+    const { nome, especie, responsavel, status } = pet;
     return (
         <div className="available-pet">
             <div className="available-pet-img-container" >
-                <img src={imagem} alt="" className="available-pet-img"/>
+                <img src={imagem} alt="" className="available-pet-img" />
             </div>
             <div className="available-pet-data">
                 <h5>{nome}</h5>
@@ -20,7 +20,13 @@ const PetCardDisponivel = ({imagem,pet}) => {
                 </div>
 
                 <div className="available-pet-status">
-                    <span className='available-pet-label'>Status: <span>{status}</span></span>
+                    <span className='available-pet-label'>Status:
+                        {status === 'APROVADO' ? <span>Aprovado</span> :
+                            status === 'EM_ADOCAO' ?
+                                <span>Em adoção</span> :
+                                <></>
+                        }
+                    </span>
                 </div>
             </div>
 

@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './CadastroPet.css'
 import { assets } from '../../assets/assets'
-import axios from "axios";
-import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom'
 
 
 const CadastroPet = ({data,imagem,setImagem,onChangeHandler,onSubmitHandler}) => {
 
-   
+   const navigate = useNavigate();
 
     return (
         <div className='add-pet-container'>
@@ -41,10 +40,10 @@ const CadastroPet = ({data,imagem,setImagem,onChangeHandler,onSubmitHandler}) =>
                         <input type="text" name='estado' onChange={onChangeHandler} value={data.estado} />
                     </div>
                 </div>
-                <div className='add-pet-responsavel'>
+                {/* <div className='add-pet-responsavel'>
                     <label htmlFor="">Responsável:</label>
                     <input onChange={onChangeHandler} type="text" name='responsavel' />
-                </div>
+                </div> */}
                 <div className='add-pet-description'>
                     <label htmlFor="">Descrição:</label>
                     <textarea name="descricao" id="" cols={25} rows={5} onChange={onChangeHandler} value={data.descricao}>
@@ -56,7 +55,7 @@ const CadastroPet = ({data,imagem,setImagem,onChangeHandler,onSubmitHandler}) =>
                     </label>
                     <input className='input-image' onChange={(e) => setImagem(e.target.files[0])} type="file" required name="imagem" id='image' />
                 </div>
-                <button type='submit' className='add-pet-button'>Cadastrar</button>
+                <button type='submit' className='add-pet-button' >Cadastrar</button>
             </form>
         </div>
     )
