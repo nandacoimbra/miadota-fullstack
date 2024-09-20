@@ -18,7 +18,15 @@ const Footer = () => {
                 <div className="footer-container-middle">
                     <ul className='navlinks'>
                         <li onClick={()=>{navigate("/")}}>Home</li>
-                        <li onClick={()=>{navigate("/#catalogo-de-pets")}}>Adotar</li>
+                        <li onClick={() => {
+                                navigate("/", { replace: true });
+                                setTimeout(() => {
+                                    const element = document.getElementById("filtra-especies-container");
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }, 100);
+                            }}>Adotar</li>
                         <li onClick={()=>{navigate("/user/newpet")}}>Cadastrar Pet</li>
                         
                     </ul>

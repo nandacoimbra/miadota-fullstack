@@ -6,7 +6,7 @@ import { WhatsappLogo, Envelope, ChatCenteredText } from 'phosphor-react'
 const InteressadosNoPetCard = ({ usuario, pet, atualizaPet }) => {
   console.log(atualizaPet)
   return (
-  <div className={'interested-card-body' + (pet.adotante===usuario._id?' adotante':'')}>
+  <div className={'interested-card-body' + (pet.adotante===usuario._id?' adotante':'') + (pet.status==='ADOTADO' && pet.adotante===usuario._id?' finalizado':'')}>
       <div className="interested-card-header">
         <h4 className='interested-card-person-name'>{usuario.nome}</h4>
         <ul className="interested-card-contact-icons">
@@ -33,6 +33,11 @@ const InteressadosNoPetCard = ({ usuario, pet, atualizaPet }) => {
               <button className='' onClick={() => { atualizaPet({ status: 'APROVADO', adotante: null }) }}>Cancelar adoção</button>
               <button className='' onClick={() => { atualizaPet({ status: 'ADOTADO', adotante: usuario._id }) }}>Finalizar adoção</button>
             </>
+          }
+
+          {
+            pet.status === 'ADOTADO' && pet.adotante == usuario._id &&
+           <span className='indicador-adotante'>Adotante</span>
           }
 
 

@@ -14,7 +14,7 @@ const Header = () => {
                     <h1>MIAdota</h1>
                     <p>Venha buscar seu melhor amigo!</p>
                     <div className='header-buttons'>
-                        <button className='adopt-button'>Adotar</button>
+                        <a className='adopt-button' href='#catalogo-de-pets'>Adotar</a>
                     </div>
                 </div>
             </div>

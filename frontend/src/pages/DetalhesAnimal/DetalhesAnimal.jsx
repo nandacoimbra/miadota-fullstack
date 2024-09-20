@@ -61,6 +61,7 @@ const DetalhesAnimal = () => {
       // Verifica a resposta do servidor
       if (response.data.success) {
         toast.success('Pet adicionado à lista de interesse!');
+        navigate("/")
       } else {
         toast.error(response.data.message);
       }

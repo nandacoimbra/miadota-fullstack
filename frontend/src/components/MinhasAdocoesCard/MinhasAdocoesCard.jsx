@@ -2,7 +2,7 @@ import React from 'react'
 import './MinhasAdocoesCard.css'
 import { assets } from '../../assets/assets'
 
-const MinhasAdocoesCard = ({pet,url}) => {
+const MinhasAdocoesCard = ({ pet, url, usuario }) => {
 
 
     return (
@@ -27,10 +27,17 @@ const MinhasAdocoesCard = ({pet,url}) => {
                 <div className="user-pet-adoption-status">
                     <span className='user-pet-label'>Status da adoção:</span>
                     {
-                        pet.adotado===false?<span className='adoption-status'>Em análise</span>
-                        :<span className='adoption-status'>Adotado</span>
+                        pet.status === 'ADOTADO' ? (
+                            pet.adotante === usuario._id ? (
+                                <span className='adoption-status adotado-voce'>Adotado por você</span>
+                            ) : (
+                                <span className='adoption-status adotado-outro'>Adotado por outra pessoa</span>
+                            )
+                        ) : (
+                            <span className='adoption-status analise'>Em análise</span>
+                        )
                     }
-                    
+
                 </div>
             </div>
 

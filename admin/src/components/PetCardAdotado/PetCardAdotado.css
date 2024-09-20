@@ -64,4 +64,13 @@
     gap: 0.5rem;
 }
 
+@media (max-width: 1120px){
+    
+    
+    .adopted-pet{
+        width: 90%;
+        height: auto;
+    }
+    
+}
 

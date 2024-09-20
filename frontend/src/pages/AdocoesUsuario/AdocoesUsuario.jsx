@@ -10,8 +10,7 @@ const AdocoesUsuario = () => {
 
     const { token, url } = useContext(AppContext);
     const [petsDeInteresse, setPetsDeInteresse] = useState([]);
-
-
+    const [usuario, setUsuario] = useState({});
 
     useEffect(() => {
         const fetchPetsDeInteresse = async () => {
@@ -25,8 +24,23 @@ const AdocoesUsuario = () => {
                 if (response.data.success) {
 
                     setPetsDeInteresse(response.data.data);
-
+                    console.log(petsDeInteresse)
                 }
+
+                // Faz a requisição para a rota /user/data, enviando o token no cabeçalho
+                const res = await axios.get(`${url}/user/data`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+
+                if (res.data.success) {
+                    setUsuario(res.data.data);
+                    console.log(usuario)
+                } else {
+                    console.error('Erro ao buscar dados do usuário:', res.data.message);
+                }
+
             } catch (error) {
                 console.error("Erro ao listar pets de interesse", error);
             }
@@ -43,7 +57,7 @@ const AdocoesUsuario = () => {
                 <div className="user-adoptios">
                     {petsDeInteresse ? (
                         petsDeInteresse.map(pet => (
-                            <MinhasAdocoesCard key={pet._id} pet={pet} url={url} />
+                            <MinhasAdocoesCard key={pet._id} pet={pet} url={url} usuario={usuario}/>
                         ))
                     ) : (
                         <p>Você ainda não tem nenhum pet de interesse.</p>

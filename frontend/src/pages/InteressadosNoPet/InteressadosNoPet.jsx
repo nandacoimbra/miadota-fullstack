@@ -65,7 +65,7 @@ const InteressadosNoPet = () => {
         <div className='users-interested-in'>
             <UserSidebar />
             <div className="users-interested-in-pets">
-                <h3 className='page-title'>Interessados no {pet.nome}</h3>
+                <h3 className='page-title'>Interessados no Pet</h3>
                 <div className="users-interested">
                     {usuariosInteressados.length > 0 ? (
                         usuariosInteressados.map(usuario => (
@@ -74,13 +74,13 @@ const InteressadosNoPet = () => {
                     ) : (
                         <div className="no-users-interested">
                             <p>Nenhum usuário interessado nesse pet.</p>
-                            <button onClick={() => { navigate("/user/mypets") }}>Voltar</button>
+                            
                         </div>
 
 
                     )}
                 </div>
-
+                <button className='back-button' onClick={() => { navigate("/user/mypets") }}>Voltar</button>
             </div>
         </div >
     )

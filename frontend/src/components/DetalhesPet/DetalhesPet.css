@@ -49,11 +49,15 @@
 
 }
 .pet-details-img-container{
+
+    width: 50%;
     display: flex;
     justify-content: center;
+
+    
 }
 .pet-details-img{
-    max-width: 70%;
+    max-width: 60%;
     border-radius: 2rem;
     object-fit: cover;
 }
@@ -74,6 +78,7 @@
         flex-direction: column-reverse;
         gap: 1rem;
         justify-content: center;
+        align-items: center;
     }
     .pet-details-container{
         display: flex;
@@ -85,6 +90,11 @@
     }
     .pet-details-header-content{  
         padding: 0;
+    }
+    .pet-details-img{
+        max-width: 100%;
+        height: auto;
+
     }
     
 }

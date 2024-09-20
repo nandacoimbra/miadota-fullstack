@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Navbar.css'
 import { Cat, User, SignOut, UserSquare } from "phosphor-react";
 import { assets } from '../../assets/assets';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 
 
@@ -23,17 +23,17 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-          if (hamburgerOn && !event.target.closest('.navbar')) {
-            setHamburgerOn(false);
-          }
+            if (hamburgerOn && !event.target.closest('.navbar')) {
+                setHamburgerOn(false);
+            }
         };
-    
+
         document.addEventListener('mousedown', handleClickOutside);
-    
+
         return () => {
-          document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
-      }, [hamburgerOn]);
+    }, [hamburgerOn]);
 
 
     return (
@@ -50,7 +50,18 @@ const Navbar = () => {
                             <Link className="nav-link" aria-current="page" href="#" to="/" onClick={() => setHamburgerOn(false)}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/#catalogo-de-pets" onClick={() => setHamburgerOn(false)}>Adotar</Link>
+                            <Link className="nav-link" to="/" onClick={() => {
+                                setHamburgerOn(false);
+                                navigate("/", { replace: true });
+                                setTimeout(() => {
+                                    const element = document.getElementById("filtra-especies-container");
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }, 100);
+                            }}>
+                                Adotar
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#" onClick={() => {

@@ -37,7 +37,7 @@ const CatalogoDePets = ({ especie }) => {
     }, [especie])
     return (
         <div className='catalogo-de-pets' id='catalogo-de-pets'>
-            <div className="pets-para-adocao">
+            <div className="pets-para-adocao" id='pets-para-adocao'>
                 {
                     petsFiltrados.map((pet) => {
                         return <PetCardHome key={pet._id} pet={pet} url={url} />

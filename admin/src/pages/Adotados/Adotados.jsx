@@ -1,4 +1,5 @@
 import React from 'react'
+import './Adotados.css'
 import PetCardAdotado from '../../components/PetCardAdotado/PetCardAdotado'
 import axios from 'axios'
 import { useEffect, useState } from 'react'

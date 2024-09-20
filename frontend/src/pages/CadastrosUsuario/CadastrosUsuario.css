@@ -50,7 +50,7 @@
     .user-added-page-content {
         justify-content: flex-start;
         padding: 0.9rem 0rem;
-        height: 70vh;
+        min-height: 70vh;
     }
 
 }
