@@ -45,7 +45,7 @@ const CadastrosUsuario = () => {
                             ))}
                         </>
                     ) : (
-                        <p>Você ainda não tem nenhum pet cadastrado.</p>
+                        <p>Você ainda não cadastrou nenhum pet.</p>
                     )}
                 </div>
 

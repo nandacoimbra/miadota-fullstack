@@ -1,5 +1,6 @@
 .user-added-page {
     display: flex;
+    justify-content: flex-start;
     width: 100%;
     min-height: 65vh;
 
@@ -9,7 +10,7 @@
     width: 100%;
     padding: 2rem 3rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     gap: 1rem;

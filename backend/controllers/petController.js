@@ -109,7 +109,7 @@ const filtraPets = async (req, res) => {
     try {
 
         //parametros extraidos das query (se houver)
-        const { status, adotado, especie, cidade, estado, sexo, aprovado, _id } = req.query;
+        const { status, adotado, especie, cidade, estado, sexo, aprovado, _id, adotante } = req.query;
         let filtro = {};
 
         if (status) {
@@ -131,10 +131,13 @@ const filtraPets = async (req, res) => {
             filtro.aprovado = aprovado; // Filtra por aprovado 
         }
         if (_id) {
-            filtro._id = _id; // Filtra por aprovado 
+            filtro._id = _id; // Filtra por id 
+        }
+        if (adotante) {
+            filtro.adotante = adotante; // Filtra por adotante 
         }
 
-        const pets = await petModel.find(filtro).populate("responsavel");
+        const pets = await petModel.find(filtro).populate("responsavel").populate("adotante");
 
         if (!pets || pets.length === 0) {
             return res.status(404).json({ success: false, message: "Nenhum pet encontrado" });

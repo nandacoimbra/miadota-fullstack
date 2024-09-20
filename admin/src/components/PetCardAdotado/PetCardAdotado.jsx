@@ -10,18 +10,18 @@ const PetCardAdotado = ({pet,imagem}) => {
                 <img src={imagem} alt="" />
             </div>
             <div className="adopted-pet-data">
-                <h5>Nick</h5>
+                <h5>{pet.nome}</h5>
                 <div className="adopted-pet-specie">
                     <span className='adopted-pet-label'>Espécie: <span>{pet.especie}</span></span>
 
                 </div>
                 <div className="adopted-pet-tutor">
-                    <span className='adopted-pet-label'>Responsável: <span>Fernanda Souza Coimbra Machado</span></span>
+                    <span className='adopted-pet-label'>Responsável: <span>{pet.responsavel.nome}</span></span>
 
                 </div>
 
                 <div className="adopted-by">
-                    <span className='adopted-pet-label'>Adotante: <span>Pierre Alvim de Paula</span></span>
+                    <span className='adopted-pet-label'>Adotante: <span>{pet.adotante.nome}</span></span>
                 </div>
             </div>
         </div>

@@ -17,6 +17,8 @@ const PetCardAprovacao = ({imagem,alteraStatus,pet}) => {
         alteraStatus(pet._id, 'APROVADO'); // Atualiza o status para APROVADO
         
       };
+      //Em futuras implementações será adicionado a notifição no próprio app da reprovação e
+      //a possibilidade do usuário editar o pet reprovado
     const handleReprovar = () => {
         alteraStatus(pet._id, 'REPROVADO'); // Atualiza o status para REPROVADO
         
@@ -34,7 +36,7 @@ const PetCardAprovacao = ({imagem,alteraStatus,pet}) => {
                         {cardExpandido ? <CaretUp size={32} onClick={alteraExpansao} className='arrow-icon' /> :
                             <CaretDown size={32} onClick={alteraExpansao} className='arrow-icon' />
                         }
-                        <Trash size={32} className='trash-icon' />
+                        {/* <Trash size={32} className='trash-icon' /> */}
                     </div>
                 </div>
                 <hr />

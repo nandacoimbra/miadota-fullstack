@@ -21,9 +21,9 @@ const PetCardDisponivel = ({ imagem, pet }) => {
 
                 <div className="available-pet-status">
                     <span className='available-pet-label'>Status:
-                        {status === 'APROVADO' ? <span>Aprovado</span> :
+                        {status === 'APROVADO' ? <span> Aprovado</span> :
                             status === 'EM_ADOCAO' ?
-                                <span>Em adoção</span> :
+                                <span> Em adoção</span> :
                                 <></>
                         }
                     </span>

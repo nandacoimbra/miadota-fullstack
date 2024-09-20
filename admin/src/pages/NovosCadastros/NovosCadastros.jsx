@@ -51,20 +51,26 @@ const NovosCadastros = () => {
   //chama a funcao fetchLits sempre q a página é recarregada
   useEffect(() => {
     fetchList();
+   
   }, [])
   return (
-
     <>
-    <h2 className='page-title'>Pets para Aprovação</h2>
-        <div className='new-requests'>
-      {
-        petList.map((pet) => {
-          return <PetCardAprovacao alteraStatus={alteraStatus} key={pet._id} pet={pet} imagem={`${url}/images/` + pet.imagem} />
-        })
-      }
-    </div>
+      <h2 className='page-title'>Pets para Aprovação</h2>
+      <div className='new-requests'>
+        {petList.length === 0 ? (
+          <p>Não há pets para aprovação no momento.</p>
+        ) : (
+          petList.map((pet) => (
+            <PetCardAprovacao
+              alteraStatus={alteraStatus}
+              key={pet._id}
+              pet={pet}
+              imagem={`${url}/images/` + pet.imagem}
+            />
+          ))
+        )}
+      </div>
     </>
-
   )
 }
 
