@@ -23,8 +23,8 @@ cd miadota
 ## Configuração do Ambiente
 Antes de iniciar a aplicação, é necessário configurar as variáveis de ambiente. Crie um arquivo .env na pasta backend/ com as seguintes variáveis:
 
-MONGODB_URI=<sua-URI-do-MongoDB>
-JWT_SECRET=<sua-chave-secreta-para-JWT>
+- MONGODB_URI= <sua-URI-do-MongoDB>
+- JWT_SECRET= <sua-chave-secreta-para-JWT>
 
 Essas variáveis são necessárias para conectar o back-end ao banco de dados MongoDB e garantir a segurança das autenticações via JWT.
 
