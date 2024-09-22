@@ -2,6 +2,9 @@
 
 Miadota é uma plataforma de adoção de pets, permitindo que usuários visualizem, filtrem e adicionem pets à sua lista de interesse. O sistema possui três principais componentes: a aplicação do front-end, o painel de administração, e a API back-end que realiza a comunicação com o banco de dados.
 
+![miadota](https://github.com/user-attachments/assets/7ec9fe60-c76b-4e82-ae1e-82d386fdf6b8)
+
+
 ## Funcionalidades
 - Listagem e filtragem de pets por especie.
 - Adição de pets para adoção.
@@ -34,14 +37,7 @@ Essas variáveis são necessárias para conectar o back-end ao banco de dados Mo
 ## Instalação de Dependências
 Navegue até as pastas front/, admin/ e back/ separadamente e instale as dependências necessárias utilizando o comando:
 
-### Back-End
-Acesse a pasta back/ e execute o seguinte comando para instalar as dependências do back-end:
-npm install express jsonwebtoken bcrypt cors dotenv body-parser multer validator nodemon
-
-### Front-End
-Acesse as pastas front/ e admin/ e execute o seguinte comando para instalar as dependências do front-end:
-
-- npm install axios react-toastify react-router-dom
+- npm install
 
 ## Executando o Projeto
 
