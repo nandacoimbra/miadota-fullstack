@@ -28,6 +28,7 @@ Antes de iniciar a aplicação, é necessário configurar as variáveis de ambie
 
 - MONGODB_URI= (sua-URI-do-MongoDB)
 - JWT_SECRET= (sua-chave-secreta-para-JWT)
+  
 Essas variáveis são necessárias para conectar o back-end ao banco de dados MongoDB e garantir a segurança das autenticações via JWT.
 
 ## Instalação de Dependências
@@ -39,17 +40,18 @@ npm install express jsonwebtoken bcrypt cors dotenv body-parser multer validator
 
 ### Front-End
 Acesse as pastas front/ e admin/ e execute o seguinte comando para instalar as dependências do front-end:
-npm install axios react-toastify react-router-dom
+
+- npm install axios react-toastify react-router-dom
 
 ## Executando o Projeto
 
 ### Front-End
 Na pasta front/ e admin/, execute:
-npm run dev
+- npm run dev
 
 ### Back-End
 Na pasta backend/, execute:
-npm run server
+- npm run server
 
 O projeto estará rodando localmente e pronto para ser utilizado.
 
